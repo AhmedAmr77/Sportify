@@ -1,0 +1,6 @@
+framework module Pods_Sportify_SportifyUITests {
+  umbrella header "Pods-Sportify-SportifyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

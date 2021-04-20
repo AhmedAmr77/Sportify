@@ -1,0 +1,749 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13CDA311F5CCB82C652CDF414CA8AEB9 /* Pods-SportifyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EB2085ECBD157AAAE49E91C2725CEF /* Pods-SportifyTests-dummy.m */; };
+		4E162D8D4D9ADE8D476FE428CC9BBAE5 /* Pods-Sportify-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06591EA5AC406733B9FB5347950C8CD1 /* Pods-Sportify-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		542ABB73DDB51DA1EBA2251B663A1694 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5758FEF7E5541CFF580D562A08E048E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		610952E8B067D833D64971AAF10F1AEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		6307506DEEB7D65338112D2872059A1E /* Pods-Sportify-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CB75D3DCF7CC7E870FBD23C6E6367C /* Pods-Sportify-dummy.m */; };
+		88B8297999C9D253D7846D9253A14D69 /* Pods-SportifyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BCB08AF0A3E0D69D235220E2C4713E /* Pods-SportifyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E9D3F0C7B09CE67DF1A4604F0AD4702 /* Pods-Sportify-SportifyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 880DB15AF2281E4B6C89A611DDD300E4 /* Pods-Sportify-SportifyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6EB90C89A85BE3A9EF5CBA554B573BF /* Pods-Sportify-SportifyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556E1A0D8E153E815C1FF0D770BDCFA7 /* Pods-Sportify-SportifyUITests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0BE81106AB4A7FE6F988FEE394A98C5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBE215F1E72C1464DDE4C2EF8630A3C9;
+			remoteInfo = "Pods-Sportify";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06591EA5AC406733B9FB5347950C8CD1 /* Pods-Sportify-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sportify-umbrella.h"; sourceTree = "<group>"; };
+		08EB2085ECBD157AAAE49E91C2725CEF /* Pods-SportifyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SportifyTests-dummy.m"; sourceTree = "<group>"; };
+		0B968385765485BCA1B30D7DE66CBE09 /* Pods-Sportify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sportify.release.xcconfig"; sourceTree = "<group>"; };
+		1EF6643020044706C24A5FF358C0DC13 /* Pods-Sportify-SportifyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sportify-SportifyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2F651DBA4753425811148C8F51D4F32A /* Pods_SportifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SportifyTests.framework; path = "Pods-SportifyTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		556E1A0D8E153E815C1FF0D770BDCFA7 /* Pods-Sportify-SportifyUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sportify-SportifyUITests-dummy.m"; sourceTree = "<group>"; };
+		67113028B1B23AB4C2DF24CD61C2E0EE /* Pods-Sportify-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sportify-acknowledgements.markdown"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		75CB75D3DCF7CC7E870FBD23C6E6367C /* Pods-Sportify-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sportify-dummy.m"; sourceTree = "<group>"; };
+		7D355D5FB621ABBA3D12842074BE8A41 /* Pods-SportifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SportifyTests.release.xcconfig"; sourceTree = "<group>"; };
+		7F00A1220E2DE5FC965CF3DFA5AB40B8 /* Pods-Sportify-SportifyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sportify-SportifyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		838AF3721E2DFF4D47F20EB5D5D03B97 /* Pods-Sportify-SportifyUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sportify-SportifyUITests-Info.plist"; sourceTree = "<group>"; };
+		83BCB08AF0A3E0D69D235220E2C4713E /* Pods-SportifyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SportifyTests-umbrella.h"; sourceTree = "<group>"; };
+		84F6C2475482986D01535D3A1BE5FB8B /* Pods-Sportify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sportify.debug.xcconfig"; sourceTree = "<group>"; };
+		880DB15AF2281E4B6C89A611DDD300E4 /* Pods-Sportify-SportifyUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sportify-SportifyUITests-umbrella.h"; sourceTree = "<group>"; };
+		9C7D6782AA5571003675BB995BAB5EF2 /* Pods-Sportify-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sportify-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A7B5DF3B75108B4EBF1C7D1B1A0B2ACA /* Pods-SportifyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SportifyTests.modulemap"; sourceTree = "<group>"; };
+		A99DA5D4D44EA8D833B28A5FF5CBD100 /* Pods_Sportify_SportifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sportify_SportifyUITests.framework; path = "Pods-Sportify-SportifyUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8B1F0FA6371052335289CE399E01FA4 /* Pods_Sportify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sportify.framework; path = "Pods-Sportify.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C958B78DE8B3358F1E91DCBC543F3A25 /* Pods-SportifyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SportifyTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CEA615E194D7FEB381F1380B0CB8911D /* Pods-Sportify-SportifyUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sportify-SportifyUITests.modulemap"; sourceTree = "<group>"; };
+		D059D81F0D0460D4013B656CDA831F51 /* Pods-SportifyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SportifyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DF29A6CD4D755F91E78CCE12B8E8896A /* Pods-Sportify.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sportify.modulemap"; sourceTree = "<group>"; };
+		E8F56078795CFC6FFDA5D0B3FCB77C8C /* Pods-SportifyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SportifyTests-Info.plist"; sourceTree = "<group>"; };
+		E9E15B74F7D9C638FF35087BAC80A83F /* Pods-SportifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SportifyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F14FF787C012F4FE9F403FF18C9F2A6D /* Pods-Sportify-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sportify-Info.plist"; sourceTree = "<group>"; };
+		F3052D797DF115DD14CA66883BACDF6E /* Pods-Sportify-SportifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sportify-SportifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4FD52C7221E5E49BC8ACFA8FB905643 /* Pods-Sportify-SportifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sportify-SportifyUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C28D741A431E74162C05EE71F952F13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				610952E8B067D833D64971AAF10F1AEC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96080B64655962D08F70554C50B07B17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				542ABB73DDB51DA1EBA2251B663A1694 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA3A9D0C1DB4F2DBAB2FBF0C9B398E36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5758FEF7E5541CFF580D562A08E048E2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18CA33BD56072EB892C0CA6D1D50DB38 /* Pods-Sportify */ = {
+			isa = PBXGroup;
+			children = (
+				DF29A6CD4D755F91E78CCE12B8E8896A /* Pods-Sportify.modulemap */,
+				67113028B1B23AB4C2DF24CD61C2E0EE /* Pods-Sportify-acknowledgements.markdown */,
+				9C7D6782AA5571003675BB995BAB5EF2 /* Pods-Sportify-acknowledgements.plist */,
+				75CB75D3DCF7CC7E870FBD23C6E6367C /* Pods-Sportify-dummy.m */,
+				F14FF787C012F4FE9F403FF18C9F2A6D /* Pods-Sportify-Info.plist */,
+				06591EA5AC406733B9FB5347950C8CD1 /* Pods-Sportify-umbrella.h */,
+				84F6C2475482986D01535D3A1BE5FB8B /* Pods-Sportify.debug.xcconfig */,
+				0B968385765485BCA1B30D7DE66CBE09 /* Pods-Sportify.release.xcconfig */,
+			);
+			name = "Pods-Sportify";
+			path = "Target Support Files/Pods-Sportify";
+			sourceTree = "<group>";
+		};
+		283083912002E521A48C237E3F7686CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8B1F0FA6371052335289CE399E01FA4 /* Pods_Sportify.framework */,
+				A99DA5D4D44EA8D833B28A5FF5CBD100 /* Pods_Sportify_SportifyUITests.framework */,
+				2F651DBA4753425811148C8F51D4F32A /* Pods_SportifyTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3050695A073EF0368D9437E68DE8E333 /* Pods-Sportify-SportifyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEA615E194D7FEB381F1380B0CB8911D /* Pods-Sportify-SportifyUITests.modulemap */,
+				1EF6643020044706C24A5FF358C0DC13 /* Pods-Sportify-SportifyUITests-acknowledgements.markdown */,
+				7F00A1220E2DE5FC965CF3DFA5AB40B8 /* Pods-Sportify-SportifyUITests-acknowledgements.plist */,
+				556E1A0D8E153E815C1FF0D770BDCFA7 /* Pods-Sportify-SportifyUITests-dummy.m */,
+				838AF3721E2DFF4D47F20EB5D5D03B97 /* Pods-Sportify-SportifyUITests-Info.plist */,
+				880DB15AF2281E4B6C89A611DDD300E4 /* Pods-Sportify-SportifyUITests-umbrella.h */,
+				F3052D797DF115DD14CA66883BACDF6E /* Pods-Sportify-SportifyUITests.debug.xcconfig */,
+				F4FD52C7221E5E49BC8ACFA8FB905643 /* Pods-Sportify-SportifyUITests.release.xcconfig */,
+			);
+			name = "Pods-Sportify-SportifyUITests";
+			path = "Target Support Files/Pods-Sportify-SportifyUITests";
+			sourceTree = "<group>";
+		};
+		32C15C09C1E23337AAC6C242555648CC /* Pods-SportifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7B5DF3B75108B4EBF1C7D1B1A0B2ACA /* Pods-SportifyTests.modulemap */,
+				D059D81F0D0460D4013B656CDA831F51 /* Pods-SportifyTests-acknowledgements.markdown */,
+				C958B78DE8B3358F1E91DCBC543F3A25 /* Pods-SportifyTests-acknowledgements.plist */,
+				08EB2085ECBD157AAAE49E91C2725CEF /* Pods-SportifyTests-dummy.m */,
+				E8F56078795CFC6FFDA5D0B3FCB77C8C /* Pods-SportifyTests-Info.plist */,
+				83BCB08AF0A3E0D69D235220E2C4713E /* Pods-SportifyTests-umbrella.h */,
+				E9E15B74F7D9C638FF35087BAC80A83F /* Pods-SportifyTests.debug.xcconfig */,
+				7D355D5FB621ABBA3D12842074BE8A41 /* Pods-SportifyTests.release.xcconfig */,
+			);
+			name = "Pods-SportifyTests";
+			path = "Target Support Files/Pods-SportifyTests";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				283083912002E521A48C237E3F7686CA /* Products */,
+				E94FE582E2803FA339AD6CE7A89A5689 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E94FE582E2803FA339AD6CE7A89A5689 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				18CA33BD56072EB892C0CA6D1D50DB38 /* Pods-Sportify */,
+				3050695A073EF0368D9437E68DE8E333 /* Pods-Sportify-SportifyUITests */,
+				32C15C09C1E23337AAC6C242555648CC /* Pods-SportifyTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		48485E904B466E08A0E0D1E02AAC2AB1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88B8297999C9D253D7846D9253A14D69 /* Pods-SportifyTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C820B19A9AA8E730A27EA97723FA158 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E162D8D4D9ADE8D476FE428CC9BBAE5 /* Pods-Sportify-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA700023ACEFF5F8B63D5DBB8FB50798 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E9D3F0C7B09CE67DF1A4604F0AD4702 /* Pods-Sportify-SportifyUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DBE215F1E72C1464DDE4C2EF8630A3C9 /* Pods-Sportify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A23A1C135FB451E03D892D31CCFFDAD8 /* Build configuration list for PBXNativeTarget "Pods-Sportify" */;
+			buildPhases = (
+				6C820B19A9AA8E730A27EA97723FA158 /* Headers */,
+				E56A28F67E4FEDA8B318B1F8FB1871CF /* Sources */,
+				1C28D741A431E74162C05EE71F952F13 /* Frameworks */,
+				63F4AA12072041718E90C0220A8FFF66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Sportify";
+			productName = "Pods-Sportify";
+			productReference = B8B1F0FA6371052335289CE399E01FA4 /* Pods_Sportify.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED109B5939BEBBA911E055B73AC660F8 /* Pods-Sportify-SportifyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F987F6AE33DABB171C15F73DEF3ACB90 /* Build configuration list for PBXNativeTarget "Pods-Sportify-SportifyUITests" */;
+			buildPhases = (
+				FA700023ACEFF5F8B63D5DBB8FB50798 /* Headers */,
+				685AB2118A7EF9F292D0D4097EBF0038 /* Sources */,
+				96080B64655962D08F70554C50B07B17 /* Frameworks */,
+				0968CD373225FB87BCE621C6E5BE4B8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Sportify-SportifyUITests";
+			productName = "Pods-Sportify-SportifyUITests";
+			productReference = A99DA5D4D44EA8D833B28A5FF5CBD100 /* Pods_Sportify_SportifyUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F5E0630D7E2AF993560E7D5F97544DA4 /* Pods-SportifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75302C615E2C71B65D3EAB3356352431 /* Build configuration list for PBXNativeTarget "Pods-SportifyTests" */;
+			buildPhases = (
+				48485E904B466E08A0E0D1E02AAC2AB1 /* Headers */,
+				17A850FB5A3C2FC03A00FC866B1D2978 /* Sources */,
+				DA3A9D0C1DB4F2DBAB2FBF0C9B398E36 /* Frameworks */,
+				CD22DDB24B8C5FA36113CACD52DE9690 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31195AE9572C4CAE5D9A4D0C65BFC560 /* PBXTargetDependency */,
+			);
+			name = "Pods-SportifyTests";
+			productName = "Pods-SportifyTests";
+			productReference = 2F651DBA4753425811148C8F51D4F32A /* Pods_SportifyTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 283083912002E521A48C237E3F7686CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBE215F1E72C1464DDE4C2EF8630A3C9 /* Pods-Sportify */,
+				ED109B5939BEBBA911E055B73AC660F8 /* Pods-Sportify-SportifyUITests */,
+				F5E0630D7E2AF993560E7D5F97544DA4 /* Pods-SportifyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0968CD373225FB87BCE621C6E5BE4B8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63F4AA12072041718E90C0220A8FFF66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD22DDB24B8C5FA36113CACD52DE9690 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17A850FB5A3C2FC03A00FC866B1D2978 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13CDA311F5CCB82C652CDF414CA8AEB9 /* Pods-SportifyTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685AB2118A7EF9F292D0D4097EBF0038 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6EB90C89A85BE3A9EF5CBA554B573BF /* Pods-Sportify-SportifyUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E56A28F67E4FEDA8B318B1F8FB1871CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6307506DEEB7D65338112D2872059A1E /* Pods-Sportify-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31195AE9572C4CAE5D9A4D0C65BFC560 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Sportify";
+			target = DBE215F1E72C1464DDE4C2EF8630A3C9 /* Pods-Sportify */;
+			targetProxy = 0BE81106AB4A7FE6F988FEE394A98C5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1400A850D80DA9BC323AFC4293FF404F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B968385765485BCA1B30D7DE66CBE09 /* Pods-Sportify.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sportify/Pods-Sportify-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Sportify/Pods-Sportify.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6BDC67CFDAF57E95C3837A8081180587 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84F6C2475482986D01535D3A1BE5FB8B /* Pods-Sportify.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sportify/Pods-Sportify-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Sportify/Pods-Sportify.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		840F1FBDBD53B8B1C98AA6CD37262B7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4FD52C7221E5E49BC8ACFA8FB905643 /* Pods-Sportify-SportifyUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		CC3A1C07FDFF6DA00995DD17C4C68998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3052D797DF115DD14CA66883BACDF6E /* Pods-Sportify-SportifyUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D2A212FB0D70402AB95ED31348842267 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D355D5FB621ABBA3D12842074BE8A41 /* Pods-SportifyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SportifyTests/Pods-SportifyTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SportifyTests/Pods-SportifyTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E2521D040B9AF6F1A791F4EAC7163F6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E15B74F7D9C638FF35087BAC80A83F /* Pods-SportifyTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SportifyTests/Pods-SportifyTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SportifyTests/Pods-SportifyTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75302C615E2C71B65D3EAB3356352431 /* Build configuration list for PBXNativeTarget "Pods-SportifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2521D040B9AF6F1A791F4EAC7163F6A /* Debug */,
+				D2A212FB0D70402AB95ED31348842267 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A23A1C135FB451E03D892D31CCFFDAD8 /* Build configuration list for PBXNativeTarget "Pods-Sportify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BDC67CFDAF57E95C3837A8081180587 /* Debug */,
+				1400A850D80DA9BC323AFC4293FF404F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F987F6AE33DABB171C15F73DEF3ACB90 /* Build configuration list for PBXNativeTarget "Pods-Sportify-SportifyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC3A1C07FDFF6DA00995DD17C4C68998 /* Debug */,
+				840F1FBDBD53B8B1C98AA6CD37262B7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
