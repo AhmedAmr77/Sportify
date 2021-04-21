@@ -11,7 +11,7 @@ target 'Sportify' do
   pod 'Alamofire', '~> 5.2'
   
   # SDWebImage
-  pod 'SDWebImage/MapKit'
+  pod 'SDWebImage'
   
 
   
