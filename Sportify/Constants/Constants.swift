@@ -15,7 +15,8 @@ struct Constants {
     
     
     // MARK: Amr Section
-    
+    static let allSportsCellIdentifier = "AllSportsCollectionViewCell"
+    static let allSportsURL = "https://www.thesportsdb.com/api/v1/json/1/all_sports.php"
     
     
     
