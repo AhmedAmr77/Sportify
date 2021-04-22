@@ -31,4 +31,10 @@ class AllSportsPresenter: IAllSportsPresenter{
         delegate?.showErrorMessage(errorMessage: errorMessage)
     }
     
+    func checkConnectivity(){
+        if !Connectivity.isConnectedToInternet {
+            delegate?.onNoConnection()
+        }
+    }
+    
 }

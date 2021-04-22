@@ -19,33 +19,24 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="mlF-kX-IAg">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                     </imageView>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pC-LI-qxE">
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4r-nD-k0n">
                         <rect key="frame" x="0.0" y="100" width="150" height="50"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4r-nD-k0n">
-                                <rect key="frame" x="51" y="13" width="48" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="o4r-nD-k0n" firstAttribute="centerY" secondItem="8pC-LI-qxE" secondAttribute="centerY" id="Rju-mu-udP"/>
-                            <constraint firstItem="o4r-nD-k0n" firstAttribute="centerX" secondItem="8pC-LI-qxE" secondAttribute="centerX" id="lKM-1D-M2y"/>
-                        </constraints>
-                    </view>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="o4r-nD-k0n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="100" id="2zd-o5-7I8"/>
                 <constraint firstItem="mlF-kX-IAg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3q5-eW-Y2F"/>
-                <constraint firstItem="8pC-LI-qxE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="100" id="Cke-oT-sDW"/>
+                <constraint firstAttribute="trailing" secondItem="o4r-nD-k0n" secondAttribute="trailing" id="AJJ-Vt-aav"/>
                 <constraint firstItem="mlF-kX-IAg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FeI-nD-vFr"/>
                 <constraint firstAttribute="trailing" secondItem="mlF-kX-IAg" secondAttribute="trailing" id="JyZ-cw-5QT"/>
                 <constraint firstAttribute="bottom" secondItem="mlF-kX-IAg" secondAttribute="bottom" id="So5-HQ-L9i"/>
-                <constraint firstAttribute="trailing" secondItem="8pC-LI-qxE" secondAttribute="trailing" id="U9v-vI-aGU"/>
-                <constraint firstAttribute="bottom" secondItem="8pC-LI-qxE" secondAttribute="bottom" id="dP7-wX-Rg7"/>
-                <constraint firstItem="8pC-LI-qxE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qX0-Zj-3G9"/>
+                <constraint firstAttribute="bottom" secondItem="o4r-nD-k0n" secondAttribute="bottom" id="bCD-za-3L4"/>
+                <constraint firstItem="o4r-nD-k0n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kUr-tV-YcT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="304" height="206"/>

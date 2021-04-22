@@ -13,6 +13,7 @@ class AllSportsViewController: UIViewController {
     @IBOutlet weak var allSportsCollectionView: UICollectionView!
     var sportsArray = [Sport]()
     var presenter:AllSportsPresenter?
+    @IBOutlet weak var noConnectionImage: UIImageView!
     var activityView:UIActivityIndicatorView?
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class AllSportsViewController: UIViewController {
         
         //presenter
         presenter = AllSportsPresenter(delegate: self)
+        presenter?.checkConnectivity()
         presenter?.getAllSports(from: Constants.allSportsURL)
         
     }
@@ -63,6 +65,18 @@ extension AllSportsViewController: UICollectionViewDelegate, UICollectionViewDat
 }
 
 extension AllSportsViewController : IAllSportsView{
+    func onNoConnection() {
+        noConnectionImage.isHidden = false
+        let alertController = UIAlertController(title: "Error", message: "No Internet Connection", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel)
+        { action -> Void in
+            // Put your code here
+        })
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
     func renderViewWithAllSports(with sportsArray: [Sport]) {
         self.sportsArray = sportsArray
         self.allSportsCollectionView.reloadData()
@@ -82,7 +96,8 @@ extension AllSportsViewController : IAllSportsView{
     }
     
     func showErrorMessage(errorMessage: String) {
-        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        print(errorMessage)
+        let alertController = UIAlertController(title: "Error", message: "Error has Occurred", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel)
         { action -> Void in
