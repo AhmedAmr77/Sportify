@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaguesTableViewCell" id="KGk-i7-Jjw" customClass="LeaguesTableViewCell" customModule="Sportify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="gnQ-uM-Ikv">
+                        <rect key="frame" x="20" y="20" width="50" height="60"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="youtube" translatesAutoresizingMaskIntoConstraints="NO" id="tq8-Zc-qG2">
+                        <rect key="frame" x="245" y="30" width="55" height="40"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbM-Rn-4jd">
+                        <rect key="frame" x="80" y="39.5" width="160" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ik0-Pa-6K2">
+                        <rect key="frame" x="250" y="30" width="30" height="40"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tq8-Zc-qG2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="5oA-JM-KQV"/>
+                    <constraint firstAttribute="bottom" secondItem="ik0-Pa-6K2" secondAttribute="bottom" constant="30" id="6n4-hG-Xzn"/>
+                    <constraint firstAttribute="trailing" secondItem="tq8-Zc-qG2" secondAttribute="trailing" constant="20" id="C5R-2V-WC1"/>
+                    <constraint firstAttribute="bottom" secondItem="tq8-Zc-qG2" secondAttribute="bottom" constant="30" id="PGA-xH-LEj"/>
+                    <constraint firstItem="ik0-Pa-6K2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QNa-ov-OXe"/>
+                    <constraint firstAttribute="trailing" secondItem="gnQ-uM-Ikv" secondAttribute="trailing" constant="250" id="Ue2-IX-bNH"/>
+                    <constraint firstAttribute="bottom" secondItem="gnQ-uM-Ikv" secondAttribute="bottom" constant="20" id="Wt2-W5-vGV"/>
+                    <constraint firstItem="tq8-Zc-qG2" firstAttribute="leading" secondItem="gnQ-uM-Ikv" secondAttribute="trailing" constant="175" id="Yey-p7-RrJ"/>
+                    <constraint firstItem="QbM-Rn-4jd" firstAttribute="leading" secondItem="gnQ-uM-Ikv" secondAttribute="trailing" constant="10" id="Zh1-bm-HSL"/>
+                    <constraint firstItem="gnQ-uM-Ikv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="hEg-IQ-r5b"/>
+                    <constraint firstItem="ik0-Pa-6K2" firstAttribute="leading" secondItem="gnQ-uM-Ikv" secondAttribute="trailing" constant="180" id="i8X-qJ-S4Q"/>
+                    <constraint firstItem="QbM-Rn-4jd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pTo-L9-g9Q"/>
+                    <constraint firstItem="gnQ-uM-Ikv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="pcS-9X-850"/>
+                    <constraint firstItem="tq8-Zc-qG2" firstAttribute="leading" secondItem="QbM-Rn-4jd" secondAttribute="trailing" constant="5" id="qsK-Jz-mgb"/>
+                    <constraint firstItem="ik0-Pa-6K2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="vLE-F8-erS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="leagueBadgeImage" destination="gnQ-uM-Ikv" id="Bbe-2a-1sO"/>
+                <outlet property="leagueNameLabel" destination="QbM-Rn-4jd" id="BOt-zp-Olg"/>
+                <outlet property="youtubeButton" destination="ik0-Pa-6K2" id="eNc-yF-q5y"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholder" width="225" height="124"/>
+        <image name="youtube" width="128" height="128"/>
+    </resources>
+</document>

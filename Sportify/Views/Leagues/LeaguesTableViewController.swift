@@ -9,38 +9,45 @@
 import UIKit
 
 class LeaguesTableViewController: UITableViewController {
-        
+    
+    private var leagueID:Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let nibCell = UINib(nibName: Constants.LeaguesCellIdentifier, bundle: nil)
+        tableView.register(nibCell, forCellReuseIdentifier: Constants.LeaguesCellIdentifier)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 2
     }
-
-    /*
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.LeaguesCellIdentifier, for: indexPath) as! LeaguesTableViewCell
 
         // Configure the cell...
-
+        cell.youtubeButton.addTarget(self, action: #selector(clicked(button:)), for: .touchUpInside)
+        cell.youtubeButton.tag = indexPath.row
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    @objc func clicked(button:UIButton){
+        print("\(button.tag)")
+    }
 
     /*
     // Override to support conditional editing of the table view.

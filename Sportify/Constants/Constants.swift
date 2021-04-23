@@ -19,7 +19,9 @@ struct Constants {
     static let allSportsURL = "https://www.thesportsdb.com/api/v1/json/1/all_sports.php"
     
     static let leaguesViewControllerIdentifier = "LeaguesTableViewController"
-    
+    static let LeaguesCellIdentifier = "LeaguesTableViewCell"
+    static let allLeaguesURL = "https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?s="
+
     
     
     
