@@ -10,12 +10,14 @@ import Foundation
 protocol IAllSportsView : class, BaseViewProtocol {
     func renderViewWithAllSports(with sportsArray: [Sport])
     func onNoConnection()
+    func performActionWhenItemClick(row:Int)
 }
 
 protocol IAllSportsPresenter{
     func getAllSports(from url: String)
     func onSuccess(sports: [Sport])
     func onFailure(errorMessage: String)
+    func onItemClick(row:Int)
 }
 
 protocol IAllSportsManager {

@@ -8,6 +8,7 @@
 
 import Foundation
 class AllSportsPresenter: IAllSportsPresenter{
+    
     weak var delegate:IAllSportsView?
     var networkManager:NetworkManager?
     
@@ -35,6 +36,10 @@ class AllSportsPresenter: IAllSportsPresenter{
         if !Connectivity.isConnectedToInternet {
             delegate?.onNoConnection()
         }
+    }
+    
+    func onItemClick(row:Int) {
+        delegate?.performActionWhenItemClick(row: row)
     }
     
 }

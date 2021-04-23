@@ -62,6 +62,10 @@ extension AllSportsViewController: UICollectionViewDelegate, UICollectionViewDat
         let inset:CGFloat = 20
         return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.onItemClick(row: indexPath.row)
+    }
 }
 
 extension AllSportsViewController : IAllSportsView{
@@ -105,6 +109,13 @@ extension AllSportsViewController : IAllSportsView{
         })
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func performActionWhenItemClick(row:Int) {
+        print(sportsArray[row].strSport)
+        let leaguesVC = storyboard?.instantiateViewController(identifier: Constants.leaguesViewControllerIdentifier)
+        navigationController?.pushViewController(leaguesVC!, animated: true)
+    }
+    
     
     
 }
