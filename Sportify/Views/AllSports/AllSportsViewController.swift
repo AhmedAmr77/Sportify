@@ -66,6 +66,8 @@ extension AllSportsViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.onItemClick(row: indexPath.row)
     }
+    
+    section
 }
 
 extension AllSportsViewController : IAllSportsView{

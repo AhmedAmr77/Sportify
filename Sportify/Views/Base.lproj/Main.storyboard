@@ -42,11 +42,11 @@
             </objects>
             <point key="canvasLocation" x="-1383" y="348"/>
         </scene>
-        <!--All Sports-->
+        <!--Sports-->
         <scene sceneID="tzZ-Nm-06R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KqG-lo-BbN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All Sports" image="sportscourt.fill" catalog="system" id="TqI-87-FOc"/>
+                    <tabBarItem key="tabBarItem" title="Sports" image="sportscourt.fill" catalog="system" id="TqI-87-FOc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zat-Ya-ogb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -78,13 +78,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8xp-G4-pa6">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZZd-Ld-hhg">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="50" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Js8-OV-Av0">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -92,6 +92,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ndn-El-KnZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="364" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="Tno-Qu-mJm" id="3Gi-2U-aju"/>
                                     <outlet property="delegate" destination="Tno-Qu-mJm" id="zVb-0U-NIe"/>
