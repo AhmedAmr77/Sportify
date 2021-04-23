@@ -67,7 +67,6 @@ extension AllSportsViewController: UICollectionViewDelegate, UICollectionViewDat
         presenter?.onItemClick(row: indexPath.row)
     }
     
-    section
 }
 
 extension AllSportsViewController : IAllSportsView{
