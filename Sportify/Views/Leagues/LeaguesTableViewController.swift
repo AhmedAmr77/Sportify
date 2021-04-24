@@ -10,25 +10,33 @@ import UIKit
 
 class LeaguesTableViewController: UITableViewController {
     
-    private var leagueID:Int!
-    
+    var sportName:String!
+    var leaguesArray = [Country]()
+    var presenter:LeaguesPresenter?
+    var activityView:UIActivityIndicatorView?
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //register cell
         let nibCell = UINib(nibName: Constants.LeaguesCellIdentifier, bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: Constants.LeaguesCellIdentifier)
+        
+        //presenter
+        presenter = LeaguesPresenter(delegate: self)
+        presenter?.getAllLeagues(from: Constants.allLeaguesURL+"\(sportName!)")
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return leaguesArray.count
     }
     
     
@@ -36,9 +44,15 @@ class LeaguesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.LeaguesCellIdentifier, for: indexPath) as! LeaguesTableViewCell
 
         // Configure the cell...
-        cell.youtubeButton.addTarget(self, action: #selector(clicked(button:)), for: .touchUpInside)
+        cell.leagueBadgeImage.sd_setImage(with: URL(string: leaguesArray[indexPath.row].strBadge!), placeholderImage: UIImage(named: "placeholder"))
+        cell.leagueNameLabel.text = leaguesArray[indexPath.row].strLeague
         cell.youtubeButton.tag = indexPath.row
+        cell.youtubeButton.addTarget(self, action: #selector(clicked(button:)), for: .touchUpInside)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("league name \(leaguesArray[indexPath.row].strLeague!)")
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -48,51 +62,6 @@ class LeaguesTableViewController: UITableViewController {
     @objc func clicked(button:UIButton){
         print("\(button.tag)")
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
     // MARK: Amr Section
@@ -106,4 +75,42 @@ class LeaguesTableViewController: UITableViewController {
     
     
     // MARK: Ahmd Section
+}
+
+extension LeaguesTableViewController:IAllLeaguesView{
+    func renderViewWithAllLeagues(with leaguesArray: [Country]) {
+        self.leaguesArray = leaguesArray
+        self.tableView.reloadData()
+    }
+    
+    func performActionWhenItemClick(row: Int) {
+        
+    }
+    
+    func performActionWhenYoutubeClick(row: Int) {
+        
+    }
+    
+    func showLoading() {
+        activityView = UIActivityIndicatorView(style: .large)
+        activityView!.center = self.view.center
+        self.view.addSubview(activityView!)
+        activityView!.startAnimating()
+    }
+    
+    func hideLoading() {
+        activityView!.stopAnimating()
+    }
+    
+    func showErrorMessage(errorMessage: String) {
+        let alertController = UIAlertController(title: "Error", message: "Error has Occurred", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel)
+        { action -> Void in
+            // Put your code here
+        })
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
 }

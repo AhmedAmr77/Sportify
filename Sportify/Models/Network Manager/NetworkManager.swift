@@ -47,5 +47,27 @@ extension NetworkManager : IAllSportsManager{
                 }
         }
     }
+}
 
+extension NetworkManager : IAllLeaguesManager{
+    func getAllLeagues(from url: String, allLeaguesPresenter: IAllLeaguesPresenter) {
+        AF.request(url)
+        .validate()
+            .responseDecodable(of: Leagues.self) { (response) in
+                switch response.result {
+                case .success( _):
+                    print("success")
+                    guard let leagues = try? response.result.get().countrys else {return}
+                    allLeaguesPresenter.onSuccess(leagues: leagues)
+                    break
+                    
+                case .failure(let error):
+                    print(error.errorDescription!)
+                    allLeaguesPresenter.onFailure(errorMessage: error.errorDescription!)
+                    break
+                }
+        }
+    }
+    
+    
 }

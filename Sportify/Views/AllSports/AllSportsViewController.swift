@@ -112,9 +112,9 @@ extension AllSportsViewController : IAllSportsView{
     }
     
     func performActionWhenItemClick(row:Int) {
-        print(sportsArray[row].strSport)
-        let leaguesVC = storyboard?.instantiateViewController(identifier: Constants.leaguesViewControllerIdentifier)
-        navigationController?.pushViewController(leaguesVC!, animated: true)
+        let leaguesVC = storyboard?.instantiateViewController(identifier: Constants.leaguesViewControllerIdentifier) as! LeaguesTableViewController
+        leaguesVC.sportName = sportsArray[row].strSport
+        navigationController?.pushViewController(leaguesVC, animated: true)
     }
     
     
