@@ -14,8 +14,11 @@ class LeaguesTableViewController: UITableViewController {
     var leaguesArray = [Country]()
     var presenter:LeaguesPresenter?
     var activityView:UIActivityIndicatorView?
+    var filteredArray = [Country]()
+    var isSearching = false
 
-
+    @IBOutlet weak var searchbar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +39,9 @@ class LeaguesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if isSearching{
+            return filteredArray.count
+        }
         return leaguesArray.count
     }
     
@@ -44,17 +50,31 @@ class LeaguesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.LeaguesCellIdentifier, for: indexPath) as! LeaguesTableViewCell
 
         // Configure the cell...
-        cell.leagueBadgeImage.sd_setImage(with: URL(string: leaguesArray[indexPath.row].strBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
-        if(leaguesArray[indexPath.row].strYoutube?.count == 0){
-            cell.youtubeButton.isHidden = true
-            cell.youtubeImage.isHidden = true
+        if isSearching{
+            cell.leagueBadgeImage.sd_setImage(with: URL(string: filteredArray[indexPath.row].strBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
+            if(filteredArray[indexPath.row].strYoutube?.count == 0){
+                cell.youtubeButton.isHidden = true
+                cell.youtubeImage.isHidden = true
+            }else{
+                cell.youtubeButton.isHidden = false
+                cell.youtubeImage.isHidden = false
+            }
+            cell.leagueNameLabel.text = filteredArray[indexPath.row].strLeague
+            cell.youtubeButton.tag = indexPath.row
+            cell.youtubeButton.addTarget(self, action: #selector(clicked(button:)), for: .touchUpInside)
         }else{
-            cell.youtubeButton.isHidden = false
-            cell.youtubeImage.isHidden = false
+            cell.leagueBadgeImage.sd_setImage(with: URL(string: leaguesArray[indexPath.row].strBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
+            if(leaguesArray[indexPath.row].strYoutube?.count == 0){
+                cell.youtubeButton.isHidden = true
+                cell.youtubeImage.isHidden = true
+            }else{
+                cell.youtubeButton.isHidden = false
+                cell.youtubeImage.isHidden = false
+            }
+            cell.leagueNameLabel.text = leaguesArray[indexPath.row].strLeague
+            cell.youtubeButton.tag = indexPath.row
+            cell.youtubeButton.addTarget(self, action: #selector(clicked(button:)), for: .touchUpInside)
         }
-        cell.leagueNameLabel.text = leaguesArray[indexPath.row].strLeague
-        cell.youtubeButton.tag = indexPath.row
-        cell.youtubeButton.addTarget(self, action: #selector(clicked(button:)), for: .touchUpInside)
         return cell
     }
     
@@ -98,7 +118,11 @@ extension LeaguesTableViewController:IAllLeaguesView{
     
     func performActionWhenYoutubeClick(row: Int) {
         let webViewVC = storyboard?.instantiateViewController(identifier: Constants.webViewViewController) as! WebViewViewController
-        webViewVC.url = leaguesArray[row].strYoutube ?? ""
+        if isSearching{
+            webViewVC.url = filteredArray[row].strYoutube ?? ""
+        }else{
+            webViewVC.url = leaguesArray[row].strYoutube ?? ""
+        }
         webViewVC.title = "Youtube"
         navigationController?.pushViewController(webViewVC, animated: true)
     }
@@ -125,4 +149,20 @@ extension LeaguesTableViewController:IAllLeaguesView{
     }
     
     
+}
+
+extension LeaguesTableViewController : UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredArray = leaguesArray.filter({ (country) -> Bool in
+            country.strLeague!.lowercased().prefix(searchText.count) == searchText.lowercased()
+        })
+        isSearching = true
+        self.tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+        searchBar.text = ""
+        tableView.reloadData()
+    }
 }
