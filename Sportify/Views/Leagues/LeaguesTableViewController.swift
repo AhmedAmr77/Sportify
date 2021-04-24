@@ -52,7 +52,8 @@ class LeaguesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("league name \(leaguesArray[indexPath.row].strLeague!)")
+        print("league name \(leaguesArray[indexPath.row].idLeague!)")
+        //navigate to league details
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -60,7 +61,11 @@ class LeaguesTableViewController: UITableViewController {
     }
     
     @objc func clicked(button:UIButton){
-        print("\(button.tag)")
+        if leaguesArray[button.tag].strYoutube?.count == 0{
+            presenter?.onFailure(errorMessage: "Youtube link is not available")
+        }else{
+            presenter?.onYoutubeClick(row: button.tag)
+        }
     }
     
     
@@ -88,7 +93,10 @@ extension LeaguesTableViewController:IAllLeaguesView{
     }
     
     func performActionWhenYoutubeClick(row: Int) {
-        
+        let webViewVC = storyboard?.instantiateViewController(identifier: Constants.webViewViewController) as! WebViewViewController
+        webViewVC.url = leaguesArray[row].strYoutube!
+        webViewVC.title = "Youtube"
+        navigationController?.pushViewController(webViewVC, animated: true)
     }
     
     func showLoading() {
@@ -103,7 +111,13 @@ extension LeaguesTableViewController:IAllLeaguesView{
     }
     
     func showErrorMessage(errorMessage: String) {
-        let alertController = UIAlertController(title: "Error", message: "Error has Occurred", preferredStyle: .alert)
+        var message = ""
+        if errorMessage != "Youtube link is not available"{
+            message = "Error has Occurred"
+        }else{
+            message = errorMessage
+        }
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel)
         { action -> Void in
