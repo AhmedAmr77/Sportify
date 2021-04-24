@@ -63,6 +63,7 @@
                 <outlet property="leagueBadgeImage" destination="gnQ-uM-Ikv" id="Bbe-2a-1sO"/>
                 <outlet property="leagueNameLabel" destination="QbM-Rn-4jd" id="BOt-zp-Olg"/>
                 <outlet property="youtubeButton" destination="ik0-Pa-6K2" id="eNc-yF-q5y"/>
+                <outlet property="youtubeImage" destination="tq8-Zc-qG2" id="0zP-8o-aSH"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </tableViewCell>

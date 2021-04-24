@@ -13,6 +13,7 @@ class LeaguesTableViewCell: UITableViewCell {
     @IBOutlet weak var youtubeButton: UIButton!
     @IBOutlet weak var leagueNameLabel: UILabel!
     @IBOutlet weak var leagueBadgeImage: UIImageView!
+    @IBOutlet weak var youtubeImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

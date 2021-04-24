@@ -44,7 +44,14 @@ class LeaguesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.LeaguesCellIdentifier, for: indexPath) as! LeaguesTableViewCell
 
         // Configure the cell...
-        cell.leagueBadgeImage.sd_setImage(with: URL(string: leaguesArray[indexPath.row].strBadge!), placeholderImage: UIImage(named: "placeholder"))
+        cell.leagueBadgeImage.sd_setImage(with: URL(string: leaguesArray[indexPath.row].strBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
+        if(leaguesArray[indexPath.row].strYoutube?.count == 0){
+            cell.youtubeButton.isHidden = true
+            cell.youtubeImage.isHidden = true
+        }else{
+            cell.youtubeButton.isHidden = false
+            cell.youtubeImage.isHidden = false
+        }
         cell.leagueNameLabel.text = leaguesArray[indexPath.row].strLeague
         cell.youtubeButton.tag = indexPath.row
         cell.youtubeButton.addTarget(self, action: #selector(clicked(button:)), for: .touchUpInside)
@@ -60,11 +67,7 @@ class LeaguesTableViewController: UITableViewController {
     }
     
     @objc func clicked(button:UIButton){
-        if leaguesArray[button.tag].strYoutube?.count == 0{
-            presenter?.onFailure(errorMessage: "Youtube link is not available")
-        }else{
             presenter?.onYoutubeClick(row: button.tag)
-        }
     }
     
     
@@ -95,7 +98,7 @@ extension LeaguesTableViewController:IAllLeaguesView{
     
     func performActionWhenYoutubeClick(row: Int) {
         let webViewVC = storyboard?.instantiateViewController(identifier: Constants.webViewViewController) as! WebViewViewController
-        webViewVC.url = leaguesArray[row].strYoutube!
+        webViewVC.url = leaguesArray[row].strYoutube ?? ""
         webViewVC.title = "Youtube"
         navigationController?.pushViewController(webViewVC, animated: true)
     }
@@ -112,13 +115,7 @@ extension LeaguesTableViewController:IAllLeaguesView{
     }
     
     func showErrorMessage(errorMessage: String) {
-        var message = ""
-        if errorMessage != "Youtube link is not available"{
-            message = "Error has Occurred"
-        }else{
-            message = errorMessage
-        }
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Error", message: "Error has Occurred", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel)
         { action -> Void in
