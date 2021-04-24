@@ -19,6 +19,9 @@ class AllSportsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //view controller title
+        self.title = "Sportify"
+        
         //register cell
         let nibCell = UINib(nibName: Constants.allSportsCellIdentifier, bundle: nil)
         allSportsCollectionView.register(nibCell, forCellWithReuseIdentifier: Constants.allSportsCellIdentifier)
@@ -114,6 +117,7 @@ extension AllSportsViewController : IAllSportsView{
     func performActionWhenItemClick(row:Int) {
         let leaguesVC = storyboard?.instantiateViewController(identifier: Constants.leaguesViewControllerIdentifier) as! LeaguesTableViewController
         leaguesVC.sportName = sportsArray[row].strSport
+        leaguesVC.title = "\(sportsArray[row].strSport) Leagues"
         navigationController?.pushViewController(leaguesVC, animated: true)
     }
     

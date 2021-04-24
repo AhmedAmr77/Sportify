@@ -52,8 +52,7 @@ class LeaguesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("league name \(leaguesArray[indexPath.row].idLeague!)")
-        //navigate to league details
+        presenter?.onItemClick(row: indexPath.row)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,7 +88,9 @@ extension LeaguesTableViewController:IAllLeaguesView{
     }
     
     func performActionWhenItemClick(row: Int) {
-        
+//        let leagueDetailVC = storyboard?.instantiateViewController(identifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
+//        leagueDetailVC.leagueID = leaguesArray[indexPath.row].idLeague
+//        navigationController?.pushViewController(leagueDetailVC, animated: true)
     }
     
     func performActionWhenYoutubeClick(row: Int) {
