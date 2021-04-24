@@ -48,7 +48,9 @@ class LeaguesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.LeaguesCellIdentifier, for: indexPath) as! LeaguesTableViewCell
-
+        
+        cell.leagueBadgeImage?.roundImage()
+       
         // Configure the cell...
         if isSearching{
             cell.leagueBadgeImage.sd_setImage(with: URL(string: filteredArray[indexPath.row].strBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))

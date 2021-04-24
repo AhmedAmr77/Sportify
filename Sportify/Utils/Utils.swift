@@ -15,3 +15,13 @@ struct Connectivity {
         return self.sharedInstance.isReachable
     }
 }
+
+
+
+extension UIImageView{
+    func roundImage(){
+        self.layer.cornerRadius = self.frame.size.width/2.0
+        self.layer.borderColor = #colorLiteral(red: 0.03921568627, green: 0.5176470588, blue: 1, alpha: 1)
+        self.layer.borderWidth = 2.0
+    }
+}
