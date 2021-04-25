@@ -7,32 +7,30 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
     
-    var productArray:[(names:String,rent:String,image:String)] = []
+    var teamsArray: [Team] = [Team]()
+    
+    var activityIndicator: UIActivityIndicatorView!
     
     
     @IBOutlet weak var teamsCollectionView: UICollectionView!{
-     didSet{
-         self.teamsCollectionView.delegate = self
-         self.teamsCollectionView.dataSource = self
-         
-         self.teamsCollectionView.register(UINib(nibName: "TeamsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-         self.teamsCollectionView.reloadData()
-     }
+        didSet{
+            self.teamsCollectionView.delegate = self
+            self.teamsCollectionView.dataSource = self
+            
+            self.teamsCollectionView.register(UINib(nibName: "TeamsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+            self.teamsCollectionView.reloadData()
+        }
     }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        productArray.append((names: "qwew", rent: "$88/month", image: "dummy"))
-        productArray.append((names: "bweqb", rent: "$22/month", image: "dummy"))
-        productArray.append((names: "wqbccc", rent: "$44/month", image: "dummy"))
-        productArray.append((names: "ddsadds", rent: "$66/month", image: "dummy"))
-        productArray.append((names: "edaee", rent: "$00/month", image: "dummy"))
         
         let itemSize = UIScreen.main.bounds.width/3
         let layout = UICollectionViewFlowLayout()
@@ -46,18 +44,17 @@ class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollection
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productArray.count
+        return teamsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.teamsCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TeamsCollectionViewCell
-        cell.teamImageView.image = UIImage(named:self.productArray[indexPath.row].image)
-        cell.teamName.text = "Liverpool"
+        cell.teamImageView.sd_setImage(with: URL(string: teamsArray[indexPath.row].strTeamBadge!), placeholderImage: UIImage(named: "dummy"))
+        cell.teamName.text = teamsArray[indexPath.row].strTeam
         
         cell.layer.cornerRadius = cell.frame.width / 2
         cell.clipsToBounds = true
@@ -65,12 +62,36 @@ class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollection
         cell.layer.borderWidth = 5.0
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width = (self.frame.size.width - 20) / 8 //some width
-//        let height = (self.frame.size.height - 20) / 3
-//        print("aaaaa \(width)  \(height)")
-//      return CGSize(width: width, height: height)
-//    }
 
+}
+
+extension TeamsTableViewCell: TeamsViewProtocol{
+    
+    func renderViewWithTeams(teams: [Team]) {
+        teamsArray = teams
+        teamsCollectionView.reloadData()
+    }
+    
+    func showLoading() {
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.center = self.teamsCollectionView.center
+        activityIndicator.startAnimating()
+        print("collVi start ActInd")
+    }
+    
+    func hideLoading() {
+        activityIndicator.stopAnimating()
+        print("collVi stop ActInd")
+    }
+    
+    func showErrorMessage(errorMessage: String) {
+//        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+//        let okAction  = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in /*any action needed*/}
+//        alert.addAction(okAction)
+//        self.present(alert, animated: true, completion: nil)
+        print("errr \(errorMessage)")
+    }
+    
+    
 }

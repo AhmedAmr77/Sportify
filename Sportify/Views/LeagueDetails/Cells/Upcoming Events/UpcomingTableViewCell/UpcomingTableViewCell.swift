@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-    var productArray:[(names:String,rent:String,image:String)] = []
+    var upcomingEventsArray:[UpcomingEvents] = [UpcomingEvents]()
+    var upcomingEventsTeamsArray: [Team] = [Team]()
     
+    var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var upcomingCollectionView: UICollectionView!{
         didSet{
@@ -27,11 +30,6 @@ class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollect
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        productArray.append((names: "Safe Bolrea", rent: "$849/month", image: "dummy"))
-        productArray.append((names: "Dining Table", rent: "$949/month", image: "dummy"))
-        productArray.append((names: "Fabric Safe", rent: "$999/month", image: "dummy"))
-        productArray.append((names: "Safe Bolrea", rent: "$849/month", image: "dummy"))
-        productArray.append((names: "Dining Table", rent: "$949/month", image: "dummy"))
         
         let itemSizeW = UIScreen.main.bounds.width / 1.5
         let itemSizeH = UIScreen.main.bounds.width / 2.75
@@ -53,15 +51,26 @@ class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollect
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productArray.count
+        return upcomingEventsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.upcomingCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UpcomingCollectionViewCelll
-        cell.team1NameLabel.text = self.productArray[indexPath.row].names
-          cell.team2NameLabel.text = self.productArray[indexPath.row].rent
-        cell.team1ImageView.image = UIImage(named:self.productArray[indexPath.row].image)
-        cell.team2ImageView.image = UIImage(named:self.productArray[indexPath.row].image)
+        cell.team1NameLabel.text = self.upcomingEventsArray[indexPath.row].strHomeTeam
+        cell.team2NameLabel.text = self.upcomingEventsArray[indexPath.row].strAwayTeam
+        
+        for item in upcomingEventsTeamsArray {
+                        
+            if self.upcomingEventsArray[indexPath.row].strHomeTeam == item.strTeam  {
+                cell.team1ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "dummy"))
+            }
+            
+            if self.upcomingEventsArray[indexPath.row].strAwayTeam == item.strTeam  {
+                cell.team2ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "dummy"))
+            }
+        }
+        
+        cell.matchDateLabel.text = "\(upcomingEventsArray[indexPath.row].dateEvent ?? "---")  @  \(upcomingEventsArray[indexPath.row].strTime?.prefix(5) ?? "--:--")"
         
         cell.layer.cornerRadius = cell.frame.width / 6
         cell.clipsToBounds = true
@@ -69,18 +78,35 @@ class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollect
         cell.layer.borderWidth = 5.0
         return cell
     }
+
+}
+
+extension UpcomingTableViewCell: UpcomingEventViewProtocol{
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//       let width = (self.frame.size.width - 20) //some width
-//
-//      return CGSize(width: width/3.1, height: 220)
-//    }
-    /*
-    func shouldInvalidateLayout(forBoundsChange: CGRect) -> Bool {
-        if !forBoundsChange.size.equalTo(upcomingCollectionView!.bounds.size) {
-//            itemSize = forBoundsChange.size
-            return true
-        }
-        return false
-    }*/
+    func renderViewWithUpcomingEvents(events: [UpcomingEvents]) {
+        upcomingEventsArray = events
+        upcomingCollectionView.reloadData()
+    }
+    
+    func renderViewWithUpcomingEventsTeams(teams: [Team]) {
+        upcomingEventsTeamsArray = teams
+        upcomingCollectionView.reloadData()
+    }
+    
+    func showLoading() {
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.center = self.upcomingCollectionView.center
+        activityIndicator.startAnimating()
+    }
+    
+    func hideLoading() {
+        activityIndicator.stopAnimating()
+    }
+    
+    func showErrorMessage(errorMessage: String) {   ///  WRONG PLACE
+        print("errr \(errorMessage)")
+    }
+    
+    
 }
