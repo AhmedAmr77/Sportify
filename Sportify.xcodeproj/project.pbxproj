@@ -10,7 +10,6 @@
 		0D131DE3262F499100D6969C /* FavoriteLeaguesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D131DE2262F499100D6969C /* FavoriteLeaguesTableViewController.swift */; };
 		0D131DE6262F4C8200D6969C /* LeaguesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D131DE4262F4C8200D6969C /* LeaguesTableViewController.swift */; };
 		0D131DE9262F4CA500D6969C /* LeagueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D131DE8262F4CA500D6969C /* LeagueDetailsViewController.swift */; };
-		0D131DEB262F4CB700D6969C /* TeamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D131DEA262F4CB700D6969C /* TeamDetailsViewController.swift */; };
 		0D89B2362635237A00F6B06C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89B2352635237A00F6B06C /* Team.swift */; };
 		0D89B2392635246700F6B06C /* TeamsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89B2382635246700F6B06C /* TeamsPresenter.swift */; };
 		0D89B23C2635262800F6B06C /* TeamsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89B23B2635262800F6B06C /* TeamsContract.swift */; };
@@ -87,7 +86,6 @@
 		0D131DE2262F499100D6969C /* FavoriteLeaguesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLeaguesTableViewController.swift; sourceTree = "<group>"; };
 		0D131DE4262F4C8200D6969C /* LeaguesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesTableViewController.swift; sourceTree = "<group>"; };
 		0D131DE8262F4CA500D6969C /* LeagueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailsViewController.swift; sourceTree = "<group>"; };
-		0D131DEA262F4CB700D6969C /* TeamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewController.swift; sourceTree = "<group>"; };
 		0D89B2352635237A00F6B06C /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		0D89B2382635246700F6B06C /* TeamsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsPresenter.swift; sourceTree = "<group>"; };
 		0D89B23B2635262800F6B06C /* TeamsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsContract.swift; sourceTree = "<group>"; };
@@ -485,7 +483,6 @@
 				0D89B246263574B100F6B06C /* UpcomingEvents */,
 				0D89B240263545A900F6B06C /* LastEvents */,
 				0D89B23226350C2200F6B06C /* Team */,
-
 			);
 			path = POJOs;
 			sourceTree = "<group>";
@@ -779,12 +776,10 @@
 				C20CF77526316C1E0007059C /* AllSportsCollectionViewCell.xib in Resources */,
 				0DD9C9EC262F42F100C12C58 /* LaunchScreen.storyboard in Resources */,
 				C24367712632C85F00E1DB8D /* LeaguesTableViewCell.xib in Resources */,
-				0D131DE7262F4C8200D6969C /* LeaguesTableViewController.xib in Resources */,
 				0DC232A426325DAB007B6CA2 /* HeaderTitleTableViewCell.xib in Resources */,
 				0DD9C9EC262F42F100C12C58 /* LaunchScreen.storyboard in Resources */,
 				0DC232A926325DAB007B6CA2 /* UpcomingCollectionViewCelll.xib in Resources */,
 				0DC232C026329E5C007B6CA2 /* TeamsCollectionViewCell.xib in Resources */,
-				0D131DE1262F473A00D6969C /* AllSportsCollectionViewController.xib in Resources */,
 				0DD9C9E9262F42F100C12C58 /* Assets.xcassets in Resources */,
 				0DC232B426328F5B007B6CA2 /* LastCollectionViewCell.xib in Resources */,
 				0DD9C9E4262F42F000C12C58 /* Main.storyboard in Resources */,
@@ -931,7 +926,6 @@
 				0DD9C9E7262F42F000C12C58 /* Sportify.xcdatamodeld in Sources */,
 				0DC232B326328F5B007B6CA2 /* LastCollectionViewCell.swift in Sources */,
 				0D89B248263574C500F6B06C /* UpcomingEvents.swift in Sources */,
-				0D131DE0262F473A00D6969C /* AllSportsCollectionViewController.swift in Sources */,
 				0DC232BB26329E31007B6CA2 /* TeamsTableViewCell.swift in Sources */,
 				0D89B23C2635262800F6B06C /* TeamsContract.swift in Sources */,
 				0DD9C9DD262F42F000C12C58 /* AppDelegate.swift in Sources */,
@@ -950,7 +944,6 @@
 				0D89B2502635790100F6B06C /* UpcomingEventPresenter.swift in Sources */,
 				0DC232B626329A7F007B6CA2 /* LastTableViewCell.swift in Sources */,
 				0D89B24D263577D900F6B06C /* UpcomingEventsContract.swift in Sources */,
-				0D131DEB262F4CB700D6969C /* TeamDetailsViewController.swift in Sources */,
 				0D131DE3262F499100D6969C /* FavoriteLeaguesTableViewController.swift in Sources */,
 				0D89B242263545B700F6B06C /* LastEvents.swift in Sources */,
 				0D89B2392635246700F6B06C /* TeamsPresenter.swift in Sources */,
