@@ -10,9 +10,8 @@ import Foundation
 import Foundation
 protocol ITeamDetailsView : class, BaseViewProtocol {
     func renderViewWithTeamDetails(with teamDetails: [String:String?])
-    func performActionWhenFacebookClick()
-    func performActionWhenYoutubeClick()
-    func performActionWhenTwitterClick()
+    func performActionWhenMediaClick(mediaType:String,url:String)
+
 
 }
 
@@ -20,9 +19,8 @@ protocol ITeamDetailsPresenter{
     func getTeamDetails(from url: String)
     func onSuccess(teamDetails: [String:String?])
     func onFailure(errorMessage: String)
-    func onFacebookClick()
-    func onYoutubeClick()
-    func onTwitterClick()
+    func onMediaClick(mediaType:String,url:String)
+
 }
 
 protocol ITeamDetailsManager {

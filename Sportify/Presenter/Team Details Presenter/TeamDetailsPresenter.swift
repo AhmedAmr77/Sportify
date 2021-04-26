@@ -8,6 +8,7 @@
 
 import Foundation
 class TeamDetailsPresenter : ITeamDetailsPresenter{
+
     weak var delegate:ITeamDetailsView?
     var networkManager:NetworkManager?
     
@@ -31,16 +32,8 @@ class TeamDetailsPresenter : ITeamDetailsPresenter{
         delegate?.showErrorMessage(errorMessage: errorMessage)
     }
     
-    func onFacebookClick() {
-        delegate?.performActionWhenFacebookClick()
-    }
-    
-    func onYoutubeClick() {
-        delegate?.performActionWhenYoutubeClick()
-    }
-    
-    func onTwitterClick() {
-        delegate?.performActionWhenTwitterClick()
+    func onMediaClick(mediaType: String,url: String) {
+        delegate?.performActionWhenMediaClick(mediaType: mediaType,url: url)
     }
     
     

@@ -217,10 +217,10 @@
 				0DD9C9E2262F42F000C12C58 /* Main.storyboard */,
 				0DDC6B552630D74E00A4B002 /* AllSports */,
 				0DDC6B572630D74E00A4B002 /* Leagues */,
-				C22CEE702634232500E1FAC6 /* WebView */,
 				0DDC6B582630D74E00A4B002 /* LeagueDetails */,
 				0DDC6B592630D74E00A4B002 /* TeamDetails */,
 				0DDC6B562630D74E00A4B002 /* FavoriteLeagues */,
+				C22CEE702634232500E1FAC6 /* WebView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,9 +228,9 @@
 		0DDC6B442630D6D600A4B002 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				C2A8AA6F26363A61006AAA57 /* Team Details Presenter */,
-				C22CEE6D2634126A00E1FAC6 /* Leagues Presenter */,
 				C22CEE6B2634122700E1FAC6 /* All Sports Presneter */,
+				C22CEE6D2634126A00E1FAC6 /* Leagues Presenter */,
+				C2A8AA6F26363A61006AAA57 /* Team Details Presenter */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -248,9 +248,9 @@
 		0DDC6B462630D74E00A4B002 /* MVP Contracts */ = {
 			isa = PBXGroup;
 			children = (
-				C22CEE6626340FE800E1FAC6 /* Leagues Contract */,
-				C20CF77A26317FDC0007059C /* All Sports Contracts */,
 				0DDC6B4A2630D74E00A4B002 /* Base Contract */,
+				C20CF77A26317FDC0007059C /* All Sports Contracts */,
+				C22CEE6626340FE800E1FAC6 /* Leagues Contract */,
 				C2A8AA6D26363913006AAA57 /* Team Details Contracts */,
 			);
 			path = "MVP Contracts";

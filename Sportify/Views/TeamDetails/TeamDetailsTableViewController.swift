@@ -9,7 +9,7 @@
 import UIKit
 
 class TeamDetailsTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var stadiumImage: UIImageView!
     @IBOutlet weak var badgeImage: UIImageView!
     @IBOutlet weak var teamNameLabel: UILabel!
@@ -40,7 +40,7 @@ class TeamDetailsTableViewController: UITableViewController {
         presenter?.getTeamDetails(from: Constants.teamDetailsUrl+teamId!)
         
     }
-
+    
     // MARK: - Table view data source
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
@@ -52,23 +52,23 @@ class TeamDetailsTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
-
+    
     
     
     @IBAction func youtubeTapped(_ sender: UITapGestureRecognizer) {
-        presenter?.onYoutubeClick()
+        presenter?.onMediaClick(mediaType: "Youtube", url: (teamDetails["strYoutube"] ?? "error") ?? "error")
     }
     
     @IBAction func facebookTapped(_ sender: UITapGestureRecognizer) {
-        presenter?.onFacebookClick()
+        presenter?.onMediaClick(mediaType: "Facebook", url: (teamDetails["strFacebook"] ?? "error") ?? "error")
     }
     
     @IBAction func twitterTapped(_ sender: UITapGestureRecognizer) {
-        presenter?.onTwitterClick()
+        presenter?.onMediaClick(mediaType: "Twitter", url: (teamDetails["strTwitter"] ?? "error") ?? "error")
     }
     
     func updateURL() {
@@ -91,19 +91,19 @@ extension TeamDetailsTableViewController:ITeamDetailsView{
         updateURL()
     }
     
-    func performActionWhenFacebookClick() {
-        print("facebook")
+    func performActionWhenMediaClick(mediaType: String,url:String) {
+        if(url == "error" || url == ""){
+            showErrorMessage(errorMessage: "noLink")
+        }else{
+           let webViewVC = storyboard?.instantiateViewController(identifier: Constants.webViewViewController) as! WebViewViewController
+            webViewVC.url = url
+            webViewVC.title = mediaType
+//            navigationController?.pushViewController(webViewVC, animated: true)
+            present(webViewVC, animated: true, completion: nil)
+        }
     }
     
-    func performActionWhenYoutubeClick() {
-        print("youtube")
-    }
-    
-    func performActionWhenTwitterClick() {
-        print("twitter")
-    }
-    
-        func showLoading() {
+    func showLoading() {
         activityView = UIActivityIndicatorView(style: .large)
         activityView!.center = self.view.center
         self.view.addSubview(activityView!)
