@@ -10,7 +10,7 @@ import Foundation
 
 class LocalManager {
     
-    
+    ///   SINGLETON
     
     
     

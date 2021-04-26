@@ -16,8 +16,13 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     var activityIndicator: UIActivityIndicatorView!
     
     var leagueId: String?
-    var round: Int?
     
+    var round: Int = 0 {
+        didSet {
+            getUpcomingEventsList(id:leagueId, round: round)
+        }
+    }
+        
     
     @IBOutlet weak var upcomingTableView: UITableView!{
         didSet{
@@ -42,12 +47,12 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         upcomingEventsCell = UpcomingTableViewCell()
         
 //        leagueId = 4335
-        round = 37
+//        round = 37
         
         
         getTeamsList(id: leagueId)
         getLastEventsList(id: leagueId)
-        getUpcomingEventsList(id:leagueId, round: round)
+//        getUpcomingEventsList(id:leagueId, round: round)
     
     }
     
@@ -176,7 +181,6 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
         self.activityIndicator.center = self.upcomingTableView.center
         activityIndicator.startAnimating()
         print("start ActInd")
-//        lastEventsCell?.showErrorMessage(errorMessage: "asdfsghgfgrtgfvcx")
     }
     
     func hideLoading() {
@@ -185,16 +189,39 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
     }
     
     func showErrorMessage(errorMessage: String) {
-        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        let okAction  = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in /*any action needed*/}
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        if (errorMessage.count > 1){
+            let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            let okAction  = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in /*any action needed*/}
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            print("showErrorMessageshowErrorMessageshowErrorMessage   if ")
+        } else {
+            let num = Int(String(errorMessage[errorMessage.startIndex]))
+            switch num {
+            case 1:
+                upcomingEventsCell?.showErrorMessage(errorMessage: "")
+            case 2:
+                lastEventsCell?.showErrorMessage(errorMessage: "")
+            case 3:
+                teamsCell?.showErrorMessage(errorMessage: "")
+            default:
+                print("DEFAULT ERROR")
+            }
+            print("showErrorMessageshowErrorMessageshowErrorMessage   else")
+        }
     }
 }
 
 extension LeagueDetailsViewController: LastEventViewProtocol{
     
     func renderViewWithLastEvents(events: [LastEvents]) {
+        
+        if let roundStr = events[0].intRound{
+            round = Int(roundStr)! + 1
+        } else {
+            upcomingEventsCell?.showErrorMessage(errorMessage: "errorMessageeeeeeeeeee")  // WRONG PLACE 
+        }
+        
         lastEventsCell?.renderViewWithLastEvents(events: events)
     }
     

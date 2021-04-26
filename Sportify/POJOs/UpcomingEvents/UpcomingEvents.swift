@@ -18,6 +18,7 @@ struct UpcomingEvents: Codable {
     let strAwayTeam: String?
     let strTime: String?
     let dateEvent: String?
+    let strStatus: String?
     
 }
 

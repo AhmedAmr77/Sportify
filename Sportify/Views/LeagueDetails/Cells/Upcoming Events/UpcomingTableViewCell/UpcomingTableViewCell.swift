@@ -16,6 +16,8 @@ class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollect
     
     var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var errorImageView: UIImageView!
+    
     @IBOutlet weak var upcomingCollectionView: UICollectionView!{
         didSet{
             self.upcomingCollectionView.delegate = self
@@ -62,11 +64,11 @@ class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollect
         for item in upcomingEventsTeamsArray {
                         
             if self.upcomingEventsArray[indexPath.row].strHomeTeam == item.strTeam  {
-                cell.team1ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "dummy"))
+                cell.team1ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
             }
             
             if self.upcomingEventsArray[indexPath.row].strAwayTeam == item.strTeam  {
-                cell.team2ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "dummy"))
+                cell.team2ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
             }
         }
         
@@ -104,8 +106,8 @@ extension UpcomingTableViewCell: UpcomingEventViewProtocol{
         activityIndicator.stopAnimating()
     }
     
-    func showErrorMessage(errorMessage: String) {   ///  WRONG PLACE
-        print("errr \(errorMessage)")
+    func showErrorMessage(errorMessage: String) {
+        errorImageView.isHidden = false
     }
     
     

@@ -21,7 +21,7 @@ class TeamsPresenter: TeamsPresenterProtocol {
             teamsViewProtocol.showLoading()
             NetworkManager().getTeams(leagueId: iD, teamsPresenterProtocol: self)
         } else {
-            teamsViewProtocol.showErrorMessage(errorMessage: "Failed To get This League :(")
+            teamsViewProtocol.showErrorMessage(errorMessage: "3")
         }
         
     }
@@ -30,12 +30,14 @@ class TeamsPresenter: TeamsPresenterProtocol {
     //    Back
     
     func onSuccess(teams: [Team]) {
+        print("onSucc TM Presenter \(teams[0].idTeam) \(teams[0].strTeam)")
         teamsViewProtocol.hideLoading()
         teamsViewProtocol.renderViewWithTeams(teams: teams)
     }
     
     func onFail(errorMessage: String) {
+        print("onFail TM Presenter")
         teamsViewProtocol.hideLoading()
-        teamsViewProtocol.showErrorMessage(errorMessage: errorMessage)
+        teamsViewProtocol.showErrorMessage(errorMessage: "3\(errorMessage)")
     }
 }
