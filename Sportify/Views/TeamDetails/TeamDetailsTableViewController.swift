@@ -24,9 +24,21 @@ class TeamDetailsTableViewController: UITableViewController {
     @IBOutlet weak var jerseyImage: UIImageView!
     @IBOutlet weak var detailsLabel: UILabel!
     
+    var teamId:String?
+    var presenter:ITeamDetailsPresenter?
+    var teamDetails:[String:String?]=[:]
+    var activityView:UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         badgeImage.roundImage()
+        teamId = "133618"
+        
+        //presenter
+        presenter = TeamDetailsPresenter(delegate: self)
+        presenter?.getTeamDetails(from: Constants.teamDetailsUrl+teamId!)
+        
     }
 
     // MARK: - Table view data source
@@ -48,17 +60,76 @@ class TeamDetailsTableViewController: UITableViewController {
     
     
     @IBAction func youtubeTapped(_ sender: UITapGestureRecognizer) {
-        print("youtube")
+        presenter?.onYoutubeClick()
     }
     
     @IBAction func facebookTapped(_ sender: UITapGestureRecognizer) {
-        print("fa")
-
+        presenter?.onFacebookClick()
     }
     
     @IBAction func twitterTapped(_ sender: UITapGestureRecognizer) {
-        print("tw")
-
+        presenter?.onTwitterClick()
     }
+    
+    func updateURL() {
+        stadiumImage.sd_setImage(with: URL(string: ((teamDetails["strStadiumThumb"]) ?? "") ?? ""), placeholderImage: UIImage(named: "placeholder"))
+        badgeImage.sd_setImage(with: URL(string: ((teamDetails["strTeamBadge"]) ?? "") ?? ""), placeholderImage: UIImage(named: "placeholder"))
+        jerseyImage.sd_setImage(with: URL(string: ((teamDetails["strTeamJersey"]) ?? "") ?? ""), placeholderImage: UIImage(named: "placeholder"))
+        teamNameLabel.text = teamDetails["strTeam"] ?? "-"
+        foundedYear.text = teamDetails["intFormedYear"] ?? "-"
+        stadiumLabel.text = teamDetails["strStadium"] ?? "-"
+        capacityLabel.text = teamDetails["intStadiumCapacity"] ?? "-"
+        locationLabel.text = teamDetails["strStadiumLocation"] ?? "-"
+        detailsLabel.text = teamDetails["strDescriptionEN"] ?? "-"
+    }
+    
+}
+
+extension TeamDetailsTableViewController:ITeamDetailsView{
+    func renderViewWithTeamDetails(with teamDetails: [String : String?]) {
+        self.teamDetails = teamDetails
+        updateURL()
+    }
+    
+    func performActionWhenFacebookClick() {
+        print("facebook")
+    }
+    
+    func performActionWhenYoutubeClick() {
+        print("youtube")
+    }
+    
+    func performActionWhenTwitterClick() {
+        print("twitter")
+    }
+    
+        func showLoading() {
+        activityView = UIActivityIndicatorView(style: .large)
+        activityView!.center = self.view.center
+        self.view.addSubview(activityView!)
+        activityView!.startAnimating()
+    }
+    
+    func hideLoading() {
+        activityView!.stopAnimating()
+    }
+    
+    func showErrorMessage(errorMessage: String) {
+        var message = ""
+        switch errorMessage {
+        case "noLink":
+            message = "Sorry, No Link Available"
+        default:
+            message = errorMessage
+        }
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel)
+        { action -> Void in
+            // Put your code here
+        })
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     
 }

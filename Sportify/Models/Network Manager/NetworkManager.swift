@@ -31,7 +31,7 @@ class NetworkManager {
 extension NetworkManager : IAllSportsManager{
     func getAllSports(from url: String, allSportsPresenter: IAllSportsPresenter) {
         AF.request(url)
-        .validate()
+            .validate()
             .responseDecodable(of: AllSportModel.self) { (response) in
                 switch response.result {
                 case .success( _):
@@ -52,7 +52,7 @@ extension NetworkManager : IAllSportsManager{
 extension NetworkManager : IAllLeaguesManager{
     func getAllLeagues(from url: String, allLeaguesPresenter: IAllLeaguesPresenter) {
         AF.request(url)
-        .validate()
+            .validate()
             .responseDecodable(of: Leagues.self) { (response) in
                 switch response.result {
                 case .success( _):
@@ -68,6 +68,24 @@ extension NetworkManager : IAllLeaguesManager{
                 }
         }
     }
-    
-    
 }
+
+extension NetworkManager : ITeamDetailsManager{
+    func getTeamDetails(from url: String, teamDetailsPresenter: ITeamDetailsPresenter) {
+        AF.request(url)
+            .validate()
+            .responseDecodable(of: TeamDetailsModel.self) { (response) in
+                switch response.result {
+                case .success( _):
+                    print("success")
+                    guard let teamDetails = try? response.result.get().teams[0] else {return}
+                    teamDetailsPresenter.onSuccess(teamDetails: teamDetails)
+                    break
+                    
+                case .failure(let error):
+                    print(error.errorDescription!)
+                    teamDetailsPresenter.onFailure(errorMessage: error.errorDescription!)
+                    break
+                }
+        }
+    }}
