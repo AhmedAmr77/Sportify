@@ -27,8 +27,8 @@ class NetworkManager {
     
     // MARK: Ahmd Section
     
-    func getTeams(leagueId id: Int, teamsPresenterProtocol: TeamsPresenterProtocol) {
-        let parameters = ["id": "\(id)"]
+    func getTeams(leagueId id: String, teamsPresenterProtocol: TeamsPresenterProtocol) {
+        let parameters = ["id": id]
         AF.request(Constants.teamsJsonURL, parameters: parameters)
             .validate()
             .responseDecodable(of: TeamsJSON.self) { (response) in
@@ -42,8 +42,8 @@ class NetworkManager {
         }
     }
     
-    func getLastEvents(leagueId id: Int, lastEventsPresenterProtocol: LastEventPresenterProtocol) {
-    let parameters = ["id": "\(id)"]
+    func getLastEvents(leagueId id: String, lastEventsPresenterProtocol: LastEventPresenterProtocol) {
+    let parameters = ["id": id]
     AF.request(Constants.lastEventJsonURL, parameters: parameters)
             .validate()
             .responseDecodable(of: LastEventsJSON.self) { (response) in
@@ -57,8 +57,8 @@ class NetworkManager {
         }
     }
     
-    func getUpcomingEvents(leagueId id: Int, round:Int, upcomingEventsPresenterProtocol: UpcomingEventPresenterProtocol) {
-        let parameters = ["id": "\(id)", "r": "\(round)"]
+    func getUpcomingEvents(leagueId id: String, round:Int, upcomingEventsPresenterProtocol: UpcomingEventPresenterProtocol) {
+        let parameters = ["id": id, "r": "\(round)"]
         AF.request(Constants.upcomingEventJsonURL, parameters: parameters)
             .validate()
             .responseDecodable(of: UpcomingEventsJSON.self) { (response) in

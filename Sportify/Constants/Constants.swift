@@ -27,8 +27,7 @@ struct Constants {
     static let teamDetailsUrl = "https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id="
     static let teamDetailsViewController = "TeamDetailsTableViewController"
     
-    
-    
+    static let leagueDetailsViewController = "LeagueDetailsViewController"
     
     
     // MARK: Ahmd Section

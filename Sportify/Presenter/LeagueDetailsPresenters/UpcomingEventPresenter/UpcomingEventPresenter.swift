@@ -16,7 +16,7 @@ class UpcomingEventPresenter: UpcomingEventPresenterProtocol {
         self.upcomingEventsViewProtocol = upcomingEventsViewProtocol
     }
     
-    func getEvents(leagueId id: Int?, round: Int?) {
+    func getEvents(leagueId id: String?, round: Int?) {
         
         if (id == nil || round == nil){
             upcomingEventsViewProtocol.showErrorMessage(errorMessage: "Failed To get upcoming events for this league :(")

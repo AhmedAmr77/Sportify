@@ -16,7 +16,7 @@ class LastEventPresenter: LastEventPresenterProtocol {
         self.lastEventsViewProtocol = lastEventsViewProtocol
     }
     
-    func getEvents(leagueId id: Int?) {
+    func getEvents(leagueId id: String?) {
         if let iD = id {
             lastEventsViewProtocol.showLoading()
             NetworkManager().getLastEvents(leagueId: iD, lastEventsPresenterProtocol: self)

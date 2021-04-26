@@ -15,7 +15,7 @@ protocol TeamsViewProtocol: BaseViewProtocol {
 
 protocol TeamsPresenterProtocol {
     
-    func getTeams(leagueId id: Int?)
+    func getTeams(leagueId id: String?)
     
     func onSuccess(teams: [Team])
     func onFail(errorMessage: String)

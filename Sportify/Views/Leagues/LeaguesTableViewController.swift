@@ -113,9 +113,9 @@ extension LeaguesTableViewController:IAllLeaguesView{
     }
     
     func performActionWhenItemClick(row: Int) {
-//        let leagueDetailVC = storyboard?.instantiateViewController(identifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
-//        leagueDetailVC.leagueID = leaguesArray[indexPath.row].idLeague
-//        navigationController?.pushViewController(leagueDetailVC, animated: true)
+        let leagueDetailVC = storyboard?.instantiateViewController(identifier: Constants.leagueDetailsViewController) as! LeagueDetailsViewController
+        leagueDetailVC.leagueId = leaguesArray[row].idLeague
+        navigationController?.pushViewController(leagueDetailVC, animated: true)
     }
     
     func performActionWhenYoutubeClick(row: Int) {

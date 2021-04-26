@@ -15,7 +15,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     
     var activityIndicator: UIActivityIndicatorView!
     
-    var leagueId: Int?
+    var leagueId: String?
     var round: Int?
     
     
@@ -41,7 +41,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         lastEventsCell = LastTableViewCell()
         upcomingEventsCell = UpcomingTableViewCell()
         
-        leagueId = 4335
+//        leagueId = 4335
         round = 37
         
         
@@ -52,15 +52,15 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
-    func getTeamsList(id: Int?) {
+    func getTeamsList(id: String?) {
         TeamsPresenter(teamsViewProtocol: self).getTeams(leagueId: id)
     }
     
-    func getLastEventsList(id: Int?) {
+    func getLastEventsList(id: String?) {
         LastEventPresenter(lastEventsViewProtocol: self).getEvents(leagueId: id)
     }
     
-    func getUpcomingEventsList(id: Int?, round: Int?) {
+    func getUpcomingEventsList(id: String?, round: Int?) {
         UpcomingEventPresenter(upcomingEventsViewProtocol: self).getEvents(leagueId: id, round: round)
     }
     

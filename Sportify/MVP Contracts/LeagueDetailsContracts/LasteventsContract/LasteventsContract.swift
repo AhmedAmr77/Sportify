@@ -16,7 +16,7 @@ protocol LastEventViewProtocol: BaseViewProtocol {
 
 protocol LastEventPresenterProtocol {
     
-    func getEvents(leagueId id: Int?)
+    func getEvents(leagueId id: String?)
     
     func onSuccess(lastEvents: [LastEvents])
     func onFail(errorMessage: String)

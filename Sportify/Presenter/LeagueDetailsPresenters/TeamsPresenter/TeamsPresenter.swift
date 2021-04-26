@@ -16,7 +16,7 @@ class TeamsPresenter: TeamsPresenterProtocol {
         self.teamsViewProtocol = teamsViewProtocol
     }
     
-    func getTeams(leagueId id: Int?) {
+    func getTeams(leagueId id: String?) {
         if let iD = id {
             teamsViewProtocol.showLoading()
             NetworkManager().getTeams(leagueId: iD, teamsPresenterProtocol: self)
