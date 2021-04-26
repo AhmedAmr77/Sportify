@@ -105,6 +105,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             
         default:
             teamsCell = (self.upcomingTableView.dequeueReusableCell(withIdentifier:"teamsCell" , for: indexPath) as! TeamsTableViewCell)
+            teamsCell?.controllerDelegate = self
             return teamsCell!
        
         }
@@ -145,6 +146,18 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 // MARK:            EXTENSIONS
 
 extension LeagueDetailsViewController: TeamsViewProtocol{
+    
+    
+    func selectedRow(row: Int){
+        let teamDetailsVC = storyboard?.instantiateViewController(identifier: Constants.teamDetailsViewController) as! TeamDetailsTableViewController
+        teamDetailsVC.teamId = teamsArr[row].idTeam
+        navigationController?.pushViewController(teamDetailsVC, animated: true)
+        print("row => \(row) \nID => \(teamsArr[row].idTeam)")
+    }
+//    
+//    func rowSelected(row: Int, teamsViewProtocol: TeamsViewProtocol) {
+//
+//    }
     
     func renderViewWithTeams(teams: [Team]) {
         teamsArr = teams

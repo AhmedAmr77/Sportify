@@ -11,6 +11,9 @@ import Foundation
 protocol TeamsViewProtocol: BaseViewProtocol {
     
     func renderViewWithTeams(teams: [Team])
+    
+//    func getRow(teamsViewProtocol: TeamsViewProtocol)
+    func selectedRow(row: Int)
 }
 
 protocol TeamsPresenterProtocol {

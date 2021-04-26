@@ -431,6 +431,7 @@
                     <navigationItem key="navigationItem" id="uw6-z0-xpb"/>
                     <connections>
                         <outlet property="searchbar" destination="Ei8-0T-PEO" id="EmX-ri-qgJ"/>
+                        <segue destination="fUp-nV-P1g" kind="push" id="8P9-Lk-VO5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHT-sH-bTR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -598,6 +599,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mBS-f3-egr"/>
                     </view>
+                    <navigationItem key="navigationItem" id="d72-qp-xyg"/>
                     <connections>
                         <outlet property="upcomingTableView" destination="Ktf-XF-mQB" id="NHR-lJ-yoq"/>
                     </connections>

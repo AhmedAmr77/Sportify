@@ -16,6 +16,8 @@ class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollection
     
     var activityIndicator: UIActivityIndicatorView!
     
+    var controllerDelegate: TeamsViewProtocol?
+    
     
     @IBOutlet weak var teamsCollectionView: UICollectionView!{
         didSet{
@@ -63,9 +65,16 @@ class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollection
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        controllerDelegate?.selectedRow(row: indexPath.row)
+    }
 }
 
 extension TeamsTableViewCell: TeamsViewProtocol{
+    
+    func selectedRow(row: Int){
+        
+    }
     
     func renderViewWithTeams(teams: [Team]) {
         teamsArray = teams

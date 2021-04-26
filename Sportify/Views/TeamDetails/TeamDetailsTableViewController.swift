@@ -33,7 +33,7 @@ class TeamDetailsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         badgeImage.roundImage()
-        teamId = "133618"
+//        teamId = "133618"
         
         //presenter
         presenter = TeamDetailsPresenter(delegate: self)
