@@ -34,6 +34,8 @@ struct Constants {
     static let getAllLeagues = "search_all_leagues.php"
     static let getLeagueDetails = ""
     static let getTeamDetails = "lookupteam.php"
+    
+    static let genericError = "error in networkLayer"
 
     
     
