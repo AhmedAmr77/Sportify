@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     var teamsArr = [Team]()
+    var upcomingEvents = [UpcomingEvents]()
+    var lastEvents = [LastEvents]()
     
     var activityIndicator: UIActivityIndicatorView!
     
@@ -22,7 +25,11 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             getUpcomingEventsList(id:leagueId, round: round)
         }
     }
-        
+
+    var leagueDetailsPresenter: LeagueDetailsPresenter!
+    
+    
+    @IBOutlet weak var favoriteBtnOutlet: UIBarButtonItem!
     
     @IBOutlet weak var upcomingTableView: UITableView!{
         didSet{
@@ -42,6 +49,8 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        leagueDetailsPresenter = LeagueDetailsPresenter(leagueDetailsViewProtocol: self)
+        
         teamsCell = TeamsTableViewCell()
         lastEventsCell = LastTableViewCell()
         upcomingEventsCell = UpcomingTableViewCell()
@@ -49,6 +58,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 //        leagueId = 4335
 //        round = 37
         
+        checkIfFavorite()                                                                    //LAST MODIFY
         
         getTeamsList(id: leagueId)
         getLastEventsList(id: leagueId)
@@ -69,7 +79,26 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         UpcomingEventPresenter(upcomingEventsViewProtocol: self).getEvents(leagueId: id, round: round)
     }
     
+    func checkIfFavorite() {                                              // make sure that league id will never be nil
+        leagueDetailsPresenter.checkIfFavorite(leagueId: leagueId!)  //  ??AAAAMMMMMRRRRR
+    }
+    
 
+    @IBAction func favoriteBtnPressed(_ sender: UIBarButtonItem) {
+        if sender.tag == 0 {
+            print("Fav Pressed tag = 0")
+            sender.image = UIImage(systemName: "heart.fill")
+//            sender.image?.withTintColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
+            sender.tag = 1
+            leagueDetailsPresenter.addToLocal(leagueId: leagueId!, teams: teamsArr, upc: upcomingEvents, las: lastEvents)
+        } else {
+            print("Fav Pressed tag = 1")
+            sender.image = UIImage(systemName: "heart")
+            sender.tag = 0
+            leagueDetailsPresenter.removeFromLocal(leagueId: leagueId!)
+        }
+    }
+    
     
     // MARK: Table View
     
@@ -150,6 +179,17 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 
 // MARK:            EXTENSIONS
 
+extension LeagueDetailsViewController: LeagueDetailsViewProtocol{
+    
+    func isFound(founded: Bool) {
+        if founded {
+            favoriteBtnOutlet.image = UIImage(systemName: "heart.fill")
+            favoriteBtnOutlet.tag = 1
+        }
+    }
+    
+}
+
 extension LeagueDetailsViewController: TeamsViewProtocol{
     
     
@@ -215,6 +255,7 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
 extension LeagueDetailsViewController: LastEventViewProtocol{
     
     func renderViewWithLastEvents(events: [LastEvents]) {
+        lastEvents = events
         
         if let roundStr = events[0].intRound{
             round = Int(roundStr)! + 1
@@ -233,6 +274,8 @@ extension LeagueDetailsViewController: LastEventViewProtocol{
 extension LeagueDetailsViewController: UpcomingEventViewProtocol{
     
     func renderViewWithUpcomingEvents(events: [UpcomingEvents]) {
+        upcomingEvents = events
+        
         upcomingEventsCell?.renderViewWithUpcomingEvents(events: events)
     }
     

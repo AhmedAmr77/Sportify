@@ -623,8 +623,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mBS-f3-egr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="d72-qp-xyg"/>
+                    <navigationItem key="navigationItem" id="d72-qp-xyg">
+                        <barButtonItem key="rightBarButtonItem" title="favorite" image="heart" catalog="system" style="plain" id="7lc-xH-10B">
+                            <connections>
+                                <action selector="favoriteBtnPressed:" destination="fUp-nV-P1g" id="5KT-ct-WiV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="favoriteBtnOutlet" destination="7lc-xH-10B" id="56a-wW-v22"/>
                         <outlet property="upcomingTableView" destination="Ktf-XF-mQB" id="NHR-lJ-yoq"/>
                     </connections>
                 </viewController>
@@ -664,6 +671,7 @@
     </scenes>
     <resources>
         <image name="fb" width="50" height="50"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="noConnect" width="156.33332824707031" height="156.33332824707031"/>
         <image name="nodata" width="140" height="61"/>
