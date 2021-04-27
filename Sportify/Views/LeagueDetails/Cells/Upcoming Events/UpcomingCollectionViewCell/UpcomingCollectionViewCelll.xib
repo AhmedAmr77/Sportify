@@ -70,7 +70,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oH-sS-Tm7" userLabel="NamesView">
-                                <rect key="frame" x="0.0" y="245" width="443" height="63"/>
+                                <rect key="frame" x="0.0" y="243" width="443" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t2N-0L-tWl">
                                         <rect key="frame" x="10" y="0.0" width="177" height="63"/>
@@ -112,7 +112,7 @@
                             <constraint firstItem="2oH-sS-Tm7" firstAttribute="leading" secondItem="EBT-O7-3mT" secondAttribute="leading" id="jjk-Fe-TXH"/>
                             <constraint firstItem="Nih-Sq-z6U" firstAttribute="height" secondItem="EBT-O7-3mT" secondAttribute="height" multiplier="0.25" id="ubr-Vk-EkU"/>
                             <constraint firstItem="ddL-oL-V9l" firstAttribute="width" secondItem="EBT-O7-3mT" secondAttribute="width" id="wZo-KI-uQ8"/>
-                            <constraint firstAttribute="bottom" secondItem="2oH-sS-Tm7" secondAttribute="bottom" constant="8" id="zVi-3u-bbm"/>
+                            <constraint firstAttribute="bottom" secondItem="2oH-sS-Tm7" secondAttribute="bottom" constant="10" id="zVi-3u-bbm"/>
                         </constraints>
                     </view>
                 </subviews>

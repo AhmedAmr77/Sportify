@@ -60,7 +60,7 @@ class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollection
         cell.teamImageView.sd_setImage(with: URL(string: teamsArray[indexPath.row].strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
         cell.teamName.text = teamsArray[indexPath.row].strTeam
         
-        cell.layer.cornerRadius = cell.frame.width / 2
+        cell.layer.cornerRadius = cell.frame.width / 4
         cell.clipsToBounds = true
         cell.layer.borderColor = UIColor.systemGray4.cgColor
         cell.layer.borderWidth = 5.0
