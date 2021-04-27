@@ -37,7 +37,7 @@ class TeamDetailsTableViewController: UITableViewController {
         
         //presenter
         presenter = TeamDetailsPresenter(delegate: self)
-        presenter?.getTeamDetails(from: Constants.teamDetailsUrl+teamId!)
+        presenter?.getTeamDetails(from: teamId!)
         
     }
     

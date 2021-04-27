@@ -11,7 +11,7 @@ import Alamofire
 
 enum ApplicationNetworking{
     case getAllSports
-    case getAllLeagues
+    case getAllLeagues(sport:String)
     case getLeagueDetails(id:String)
     case getTeamDetails(id:String)
 }
@@ -55,12 +55,12 @@ extension ApplicationNetworking : TargetType {
         switch self {
         case .getAllSports:
             return .requestPlain
-        case .getAllLeagues:
-            return .requestPlain
+        case .getAllLeagues(let sport):
+            return .requestParameters(parameters: ["s":sport], encoding: URLEncoding.default)
         case .getLeagueDetails(let id):
-            return .requestParameters(parameters: ["id":id], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: ["id":id], encoding: URLEncoding.default)
         case .getTeamDetails(let id):
-            return .requestParameters(parameters: ["id":id], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: ["id":id], encoding: URLEncoding.default)   //for get,head or delete use URLEncoding.default
         }
     }
     

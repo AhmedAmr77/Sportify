@@ -9,17 +9,25 @@
 import Foundation
 class LeaguesPresenter : IAllLeaguesPresenter{
     weak var delegate:IAllLeaguesView?
-    var networkManager:NetworkManager?
+    var networkManager:IAllLeaguesManager?
     
 
     init(delegate: IAllLeaguesView) {
         self.delegate = delegate
-        networkManager = NetworkManager()
+        networkManager = SportsAPI.shared
     }
     
-    func getAllLeagues(from url: String) {
+    func getAllLeagues(from sport: String) {
         delegate?.showLoading()
-        networkManager?.getAllLeagues(from: url, allLeaguesPresenter: self)
+//        networkManager?.getAllLeagues(from: url, allLeaguesPresenter: self)
+        networkManager?.getLeagues(sport: sport, completion: { (result) in
+            switch result {
+            case .success(let response):
+                self.onSuccess(leagues: response!.countrys)
+            case .failure(let error):
+                self.onFailure(errorMessage: error.localizedDescription)
+            }
+        })
     }
     
     func onSuccess(leagues: [Country]) {

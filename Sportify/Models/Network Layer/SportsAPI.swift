@@ -20,3 +20,19 @@ class SportsAPI : BaseAPI<ApplicationNetworking>, IAllSportsManager {
     }
     
 }
+
+extension SportsAPI : ITeamDetailsManager{
+    func getTeamDetails(teamId:String,completion: @escaping (Result<TeamDetailsModel?,NSError>) -> Void){
+        self.fetchData(target: .getTeamDetails(id: teamId), responseClass: TeamDetailsModel.self) { (result) in
+            completion(result)
+        }
+    }
+}
+
+extension SportsAPI : IAllLeaguesManager{
+    func getLeagues(sport:String,completion: @escaping (Result<Leagues?,NSError>) -> Void){
+        self.fetchData(target: .getAllLeagues(sport: sport), responseClass: Leagues.self) { (result) in
+            completion(result)
+        }
+    }
+}

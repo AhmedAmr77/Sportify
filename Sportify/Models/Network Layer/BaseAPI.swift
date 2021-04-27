@@ -15,6 +15,7 @@ class BaseAPI<T:TargetType> {
         let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
         let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
         let params = buildParams(task: target.task)
+        print(target.baseURL+target.path)
         AF.request(target.baseURL + target.path, method: method , parameters: params.0,encoding: params.1, headers: headers)
             .responseJSON { (response) in
                 guard let statusCode = response.response?.statusCode else {

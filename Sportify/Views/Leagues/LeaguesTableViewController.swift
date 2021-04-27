@@ -28,7 +28,7 @@ class LeaguesTableViewController: UITableViewController {
         
         //presenter
         presenter = LeaguesPresenter(delegate: self)
-        presenter?.getAllLeagues(from: Constants.allLeaguesURL+"\(sportName!)")
+        presenter?.getAllLeagues(from: sportName)
     }
 
     // MARK: - Table view data source
