@@ -21,5 +21,6 @@ protocol IAllSportsPresenter{
 }
 
 protocol IAllSportsManager {
-    func getAllSports(from url: String, allSportsPresenter : IAllSportsPresenter)
+//    func getAllSports(from url: String, allSportsPresenter : IAllSportsPresenter)
+    func getAllSports(completion: @escaping (Result<AllSportModel?,NSError>) -> Void)
 }
