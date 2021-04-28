@@ -10,16 +10,26 @@ import Foundation
 class TeamDetailsPresenter : ITeamDetailsPresenter{
 
     weak var delegate:ITeamDetailsView?
-    var networkManager:NetworkManager?
+    var networkManager:ITeamDetailsManager?
     
     init(delegate: ITeamDetailsView) {
         self.delegate = delegate
-        networkManager = NetworkManager()
+        networkManager = SportsAPI.shared
     }
     
-    func getTeamDetails(from url: String) {
+    func getTeamDetails(from id: String) {
         delegate?.showLoading()
-        networkManager?.getTeamDetails(from: url, teamDetailsPresenter: self)
+//        networkManager?.getTeamDetails(from: url, teamDetailsPresenter: self)
+        networkManager?.getTeamDetails(teamId: id, completion: { (result) in
+            switch result{
+                
+            case .success(let response):
+                self.onSuccess(teamDetails: (response?.teams[0])!)
+            case .failure(let error):
+                self.onFailure(errorMessage: error.localizedDescription)
+            }
+        })
+        
     }
     
     func onSuccess(teamDetails: [String : String?]) {

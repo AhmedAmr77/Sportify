@@ -29,6 +29,15 @@ struct Constants {
     
     static let leagueDetailsViewController = "LeagueDetailsViewController"
     
+    static let baseURL = "https://www.thesportsdb.com/api/v1/json/1/"
+    static let getAllSports = "all_sports.php"
+    static let getAllLeagues = "search_all_leagues.php"
+    static let getLeagueDetails = ""
+    static let getTeamDetails = "lookupteam.php"
+    
+    static let genericError = "error in networkLayer"
+
+    
     
     // MARK: Ahmd Section
     

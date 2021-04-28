@@ -24,5 +24,6 @@ protocol ITeamDetailsPresenter{
 }
 
 protocol ITeamDetailsManager {
-    func getTeamDetails(from url: String, teamDetailsPresenter : ITeamDetailsPresenter)
+//    func getTeamDetails(from url: String, teamDetailsPresenter : ITeamDetailsPresenter)
+    func getTeamDetails(teamId:String,completion: @escaping (Result<TeamDetailsModel?,NSError>) -> Void)
 }

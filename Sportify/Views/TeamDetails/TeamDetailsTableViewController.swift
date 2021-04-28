@@ -37,7 +37,7 @@ class TeamDetailsTableViewController: UITableViewController {
         
         //presenter
         presenter = TeamDetailsPresenter(delegate: self)
-        presenter?.getTeamDetails(from: Constants.teamDetailsUrl+teamId!)
+        presenter?.getTeamDetails(from: teamId!)
         
     }
     
@@ -54,7 +54,7 @@ class TeamDetailsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     

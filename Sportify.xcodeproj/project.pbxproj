@@ -54,6 +54,10 @@
 		C20CF77926317FD70007059C /* AllSportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20CF77826317FD70007059C /* AllSportPresenter.swift */; };
 		C20CF77C26317FFE0007059C /* All Sports Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20CF77B26317FFE0007059C /* All Sports Contract.swift */; };
 		C20CF77F263188300007059C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20CF77E263188300007059C /* Utils.swift */; };
+		C213EF7E2637FF8D00C0E6A2 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C213EF7D2637FF8D00C0E6A2 /* TargetType.swift */; };
+		C213EF80263801CE00C0E6A2 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C213EF7F263801CE00C0E6A2 /* BaseAPI.swift */; };
+		C213EF8226380A0C00C0E6A2 /* ApplicationNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C213EF8126380A0C00C0E6A2 /* ApplicationNetworking.swift */; };
+		C213EF8426380E5400C0E6A2 /* SportsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C213EF8326380E5400C0E6A2 /* SportsAPI.swift */; };
 		C22CEE682634100400E1FAC6 /* LeaguesContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22CEE672634100400E1FAC6 /* LeaguesContracts.swift */; };
 		C22CEE6A2634103E00E1FAC6 /* LeaguesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22CEE692634103E00E1FAC6 /* LeaguesModel.swift */; };
 		C22CEE6F2634127E00E1FAC6 /* LeaguesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22CEE6E2634127E00E1FAC6 /* LeaguesPresenter.swift */; };
@@ -145,6 +149,10 @@
 		C20CF77826317FD70007059C /* AllSportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllSportPresenter.swift; path = "Sportify/Presenter/All Sports Presneter/AllSportPresenter.swift"; sourceTree = SOURCE_ROOT; };
 		C20CF77B26317FFE0007059C /* All Sports Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "All Sports Contract.swift"; sourceTree = "<group>"; };
 		C20CF77E263188300007059C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C213EF7D2637FF8D00C0E6A2 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		C213EF7F263801CE00C0E6A2 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		C213EF8126380A0C00C0E6A2 /* ApplicationNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationNetworking.swift; sourceTree = "<group>"; };
+		C213EF8326380E5400C0E6A2 /* SportsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsAPI.swift; sourceTree = "<group>"; };
 		C22CEE672634100400E1FAC6 /* LeaguesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesContracts.swift; sourceTree = "<group>"; };
 		C22CEE692634103E00E1FAC6 /* LeaguesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeaguesModel.swift; path = "Sportify/MVP Contracts/Leagues Contract/LeaguesModel.swift"; sourceTree = SOURCE_ROOT; };
 		C22CEE6E2634127E00E1FAC6 /* LeaguesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesPresenter.swift; sourceTree = "<group>"; };
@@ -461,6 +469,7 @@
 		0DDC6B422630D6B000A4B002 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C213EF7C2637FF7200C0E6A2 /* Network Layer */,
 				0DDC6B522630D74E00A4B002 /* Local Manager */,
 				0DDC6B4F2630D74E00A4B002 /* Network Manager */,
 			);
@@ -642,6 +651,17 @@
 				C20CF77E263188300007059C /* Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C213EF7C2637FF7200C0E6A2 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				C213EF7D2637FF8D00C0E6A2 /* TargetType.swift */,
+				C213EF7F263801CE00C0E6A2 /* BaseAPI.swift */,
+				C213EF8126380A0C00C0E6A2 /* ApplicationNetworking.swift */,
+				C213EF8326380E5400C0E6A2 /* SportsAPI.swift */,
+			);
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 		C22CEE6626340FE800E1FAC6 /* Leagues Contract */ = {
@@ -946,6 +966,7 @@
 				C22CEE722634235400E1FAC6 /* WebViewViewController.swift in Sources */,
 				C22CEE682634100400E1FAC6 /* LeaguesContracts.swift in Sources */,
 				C2A8AA7126363A7A006AAA57 /* TeamDetailsPresenter.swift in Sources */,
+				C213EF8226380A0C00C0E6A2 /* ApplicationNetworking.swift in Sources */,
 				0DD9C9E7262F42F000C12C58 /* Sportify.xcdatamodeld in Sources */,
 				0D89B24526355D7C00F6B06C /* LasteventsContract.swift in Sources */,
 				0DC232A826325DAB007B6CA2 /* UpcomingCollectionViewCelll.swift in Sources */,
@@ -955,10 +976,12 @@
 				0DC232B326328F5B007B6CA2 /* LastCollectionViewCell.swift in Sources */,
 				0D2014A82638CFED002096A7 /* FavoriteLeaguesPresenter.swift in Sources */,
 				0D89B248263574C500F6B06C /* UpcomingEvents.swift in Sources */,
+				C213EF8426380E5400C0E6A2 /* SportsAPI.swift in Sources */,
 				0DC232BB26329E31007B6CA2 /* TeamsTableViewCell.swift in Sources */,
 				0D89B23C2635262800F6B06C /* TeamsContract.swift in Sources */,
 				0DD9C9DD262F42F000C12C58 /* AppDelegate.swift in Sources */,
 				0DDC6B512630D74E00A4B002 /* NetworkManager.swift in Sources */,
+				C213EF7E2637FF8D00C0E6A2 /* TargetType.swift in Sources */,
 				0D89B2362635237A00F6B06C /* Team.swift in Sources */,
 				0DD9C9DF262F42F000C12C58 /* SceneDelegate.swift in Sources */,
 				C20CF77C26317FFE0007059C /* All Sports Contract.swift in Sources */,
@@ -979,6 +1002,7 @@
 				0DFD34A526379BBD00A7F8CE /* LeagueDetailsPresenter.swift in Sources */,
 				0D89B2392635246700F6B06C /* TeamsPresenter.swift in Sources */,
 				0DDC6B492630D74E00A4B002 /* Constants.swift in Sources */,
+				C213EF80263801CE00C0E6A2 /* BaseAPI.swift in Sources */,
 				0D2014A52638994C002096A7 /* LeagueDetailsContract.swift in Sources */,
 				C2A8AA6826361B2B006AAA57 /* TeamDetailsTableViewController.swift in Sources */,
 				0DDC6B542630D74E00A4B002 /* LocalManager.swift in Sources */,
