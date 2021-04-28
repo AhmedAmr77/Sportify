@@ -115,6 +115,7 @@ extension LeaguesTableViewController:IAllLeaguesView{
     func performActionWhenItemClick(row: Int) {
         let leagueDetailVC = storyboard?.instantiateViewController(identifier: Constants.leagueDetailsViewController) as! LeagueDetailsViewController
         leagueDetailVC.leagueId = leaguesArray[row].idLeague
+        leagueDetailVC.leagueCountry = leaguesArray[row]
         navigationController?.pushViewController(leagueDetailVC, animated: true)
     }
     

@@ -34,7 +34,10 @@ class NetworkManager {
             .responseDecodable(of: TeamsJSON.self) { (response) in
                 switch response.result {
                 case .success(_):
-                    guard let teams = response.value?.teams else {return}
+                    guard let teams = response.value?.teams else {
+                        teamsPresenterProtocol.onFail(errorMessage: "")
+                        return
+                    }
                     teamsPresenterProtocol.onSuccess(teams: teams)
                 case .failure(let err):
                     teamsPresenterProtocol.onFail(errorMessage: err.localizedDescription)
@@ -49,7 +52,10 @@ class NetworkManager {
             .responseDecodable(of: LastEventsJSON.self) { (response) in
                 switch response.result {
                     case .success(_):
-                        guard let events = response.value?.events else {return}
+                        guard let events = response.value?.events else {
+                            lastEventsPresenterProtocol.onFail(errorMessage: "")
+                            return
+                        }
                         lastEventsPresenterProtocol.onSuccess(lastEvents: events)
                     case .failure(let err):
                         lastEventsPresenterProtocol.onFail(errorMessage: err.localizedDescription)
@@ -64,7 +70,10 @@ class NetworkManager {
             .responseDecodable(of: UpcomingEventsJSON.self) { (response) in
                 switch response.result {
                 case .success(_):
-                    guard let events = response.value?.events else {return}
+                    guard let events = response.value?.events else {
+                        upcomingEventsPresenterProtocol.onFail(errorMessage: "")
+                        return
+                    }
                     upcomingEventsPresenterProtocol.onSuccess(upcomingEvents: events)
                 case .failure(let err):
                     upcomingEventsPresenterProtocol.onFail(errorMessage: err.localizedDescription)

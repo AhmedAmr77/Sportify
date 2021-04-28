@@ -22,24 +22,34 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qO0-UV-ZgY">
                                 <rect key="frame" x="30.5" y="45" width="246" height="210"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arsenal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p81-HW-Fni">
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhe-hm-PYt">
                                 <rect key="frame" x="0.0" y="195" width="307" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arsenal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p81-HW-Fni">
+                                        <rect key="frame" x="10" y="0.0" width="287" height="95"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstItem="p81-HW-Fni" firstAttribute="top" secondItem="Mhe-hm-PYt" secondAttribute="top" id="9hk-zf-Xhr"/>
+                                    <constraint firstAttribute="trailing" secondItem="p81-HW-Fni" secondAttribute="trailing" constant="10" id="GwH-RC-amW"/>
+                                    <constraint firstAttribute="bottom" secondItem="p81-HW-Fni" secondAttribute="bottom" constant="10" id="L4l-1V-8ZK"/>
+                                    <constraint firstItem="p81-HW-Fni" firstAttribute="leading" secondItem="Mhe-hm-PYt" secondAttribute="leading" constant="10" id="SkZ-Ir-Saq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="p81-HW-Fni" secondAttribute="bottom" id="A0X-xn-MPx"/>
+                            <constraint firstAttribute="bottom" secondItem="Mhe-hm-PYt" secondAttribute="bottom" id="CGx-KQ-Oyb"/>
                             <constraint firstItem="qO0-UV-ZgY" firstAttribute="centerX" secondItem="PRO-Am-a4B" secondAttribute="centerX" id="Qpn-A1-Mpm"/>
+                            <constraint firstAttribute="trailing" secondItem="Mhe-hm-PYt" secondAttribute="trailing" id="T1X-14-ovZ"/>
                             <constraint firstItem="qO0-UV-ZgY" firstAttribute="height" secondItem="PRO-Am-a4B" secondAttribute="height" multiplier="0.7" id="TPH-QK-GDB"/>
-                            <constraint firstAttribute="trailing" secondItem="p81-HW-Fni" secondAttribute="trailing" id="aAl-9V-Ap9"/>
-                            <constraint firstItem="qO0-UV-ZgY" firstAttribute="centerX" secondItem="PRO-Am-a4B" secondAttribute="centerX" id="fsV-r6-ZI7"/>
                             <constraint firstItem="qO0-UV-ZgY" firstAttribute="centerY" secondItem="PRO-Am-a4B" secondAttribute="centerY" id="kL8-Kj-9Wi"/>
-                            <constraint firstItem="p81-HW-Fni" firstAttribute="height" secondItem="PRO-Am-a4B" secondAttribute="height" multiplier="0.35" id="rgf-Xy-hE3"/>
-                            <constraint firstItem="p81-HW-Fni" firstAttribute="leading" secondItem="PRO-Am-a4B" secondAttribute="leading" id="sUY-ru-5AC"/>
+                            <constraint firstItem="Mhe-hm-PYt" firstAttribute="height" secondItem="PRO-Am-a4B" secondAttribute="height" multiplier="0.35" id="q0D-H9-vWG"/>
+                            <constraint firstItem="Mhe-hm-PYt" firstAttribute="leading" secondItem="PRO-Am-a4B" secondAttribute="leading" id="rum-Dd-scQ"/>
                             <constraint firstItem="qO0-UV-ZgY" firstAttribute="width" secondItem="PRO-Am-a4B" secondAttribute="width" multiplier="0.8" id="xbJ-ko-gEN"/>
                         </constraints>
                     </view>

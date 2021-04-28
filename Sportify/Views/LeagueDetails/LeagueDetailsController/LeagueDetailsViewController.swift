@@ -7,17 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
 class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     var teamsArr = [Team]()
+    var upcomingEvents = [UpcomingEvents]()
+    var lastEvents = [LastEvents]()
     
     var activityIndicator: UIActivityIndicatorView!
     
     var leagueId: String?
-    var round: Int?
+    var leagueCountry: Country?
     
+    var round: Int = 0 {
+        didSet {
+            getUpcomingEventsList(id:leagueId, round: round)
+        }
+    }
+
+    var leagueDetailsPresenter: LeagueDetailsPresenter!
+    
+    
+    @IBOutlet weak var favoriteBtnOutlet: UIBarButtonItem!
     
     @IBOutlet weak var upcomingTableView: UITableView!{
         didSet{
@@ -37,17 +50,19 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        title = leagueCountry?.strLeague
+        
+        leagueDetailsPresenter = LeagueDetailsPresenter(leagueDetailsViewProtocol: self)
+        
         teamsCell = TeamsTableViewCell()
         lastEventsCell = LastTableViewCell()
         upcomingEventsCell = UpcomingTableViewCell()
-        
-//        leagueId = 4335
-        round = 37
-        
+      
+        checkIfFavorite()
         
         getTeamsList(id: leagueId)
         getLastEventsList(id: leagueId)
-        getUpcomingEventsList(id:leagueId, round: round)
+//        getUpcomingEventsList(id:leagueId, round: round)
     
     }
     
@@ -64,7 +79,27 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         UpcomingEventPresenter(upcomingEventsViewProtocol: self).getEvents(leagueId: id, round: round)
     }
     
+    func checkIfFavorite() {                                              // make sure that league id will never be nil
+        print("DetLeag - checkIfFavorite - \(leagueId!)")
+        leagueDetailsPresenter.checkIfFavorite(leagueId: leagueId!)  //  ??AAAAMMMMMRRRRR
+    }
+    
 
+    @IBAction func favoriteBtnPressed(_ sender: UIBarButtonItem) {
+        if sender.tag == 0 {
+            print("Fav Pressed tag = 0")
+            sender.image = UIImage(systemName: "heart.fill")
+//            sender.image?.withTintColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
+            sender.tag = 1
+            leagueDetailsPresenter.addToLocal(leagueId: leagueId!, leagueCountry: leagueCountry!)
+        } else {
+            print("Fav Pressed tag = 1")
+            sender.image = UIImage(systemName: "heart")
+            sender.tag = 0
+            leagueDetailsPresenter.removeFromLocal(leagueId: leagueId!)
+        }
+    }
+    
     
     // MARK: Table View
     
@@ -145,6 +180,17 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 
 // MARK:            EXTENSIONS
 
+extension LeagueDetailsViewController: LeagueDetailsViewProtocol{
+    
+    func isFound(founded: Bool) {
+        if founded {
+            favoriteBtnOutlet.image = UIImage(systemName: "heart.fill")
+            favoriteBtnOutlet.tag = 1
+        }
+    }
+    
+}
+
 extension LeagueDetailsViewController: TeamsViewProtocol{
     
     
@@ -152,7 +198,7 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
         let teamDetailsVC = storyboard?.instantiateViewController(identifier: Constants.teamDetailsViewController) as! TeamDetailsTableViewController
         teamDetailsVC.teamId = teamsArr[row].idTeam
         navigationController?.pushViewController(teamDetailsVC, animated: true)
-        print("row => \(row) \nID => \(teamsArr[row].idTeam)")
+//        print("row => \(row) \nID => \(teamsArr[row].idTeam)")
     }
 //    
 //    func rowSelected(row: Int, teamsViewProtocol: TeamsViewProtocol) {
@@ -176,7 +222,6 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
         self.activityIndicator.center = self.upcomingTableView.center
         activityIndicator.startAnimating()
         print("start ActInd")
-//        lastEventsCell?.showErrorMessage(errorMessage: "asdfsghgfgrtgfvcx")
     }
     
     func hideLoading() {
@@ -185,16 +230,40 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
     }
     
     func showErrorMessage(errorMessage: String) {
-        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        let okAction  = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in /*any action needed*/}
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        if (errorMessage.count > 2){
+            let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            let okAction  = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in /*any action needed*/}
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            print("showErrorMessageshowErrorMessageshowErrorMessage   if ")
+        } else {
+            let num = Int(String(errorMessage[errorMessage.startIndex]))
+            switch num {
+            case 1:
+                upcomingEventsCell?.showErrorMessage(errorMessage: "")
+            case 2:
+                lastEventsCell?.showErrorMessage(errorMessage: "")
+            case 3:
+                teamsCell?.showErrorMessage(errorMessage: "")
+            default:
+                print("DEFAULT ERROR")
+            }
+            print("showErrorMessageshowErrorMessageshowErrorMessage   else")
+        }
     }
 }
 
 extension LeagueDetailsViewController: LastEventViewProtocol{
     
     func renderViewWithLastEvents(events: [LastEvents]) {
+        lastEvents = events
+        
+        if let roundStr = events[0].intRound{
+            round = Int(roundStr)! + 1
+        } else {
+            upcomingEventsCell?.showErrorMessage(errorMessage: "errorMessageeeeeeeeeee")  // WRONG PLACE 
+        }
+        
         lastEventsCell?.renderViewWithLastEvents(events: events)
     }
     
@@ -206,6 +275,8 @@ extension LeagueDetailsViewController: LastEventViewProtocol{
 extension LeagueDetailsViewController: UpcomingEventViewProtocol{
     
     func renderViewWithUpcomingEvents(events: [UpcomingEvents]) {
+        upcomingEvents = events
+        
         upcomingEventsCell?.renderViewWithUpcomingEvents(events: events)
     }
     
