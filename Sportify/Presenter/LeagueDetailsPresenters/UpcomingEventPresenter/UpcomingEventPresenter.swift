@@ -19,7 +19,7 @@ class UpcomingEventPresenter: UpcomingEventPresenterProtocol {
     func getEvents(leagueId id: String?, round: Int?) {
         
         if (id == nil || round == nil){
-            upcomingEventsViewProtocol.showErrorMessage(errorMessage: "Failed To get upcoming events for this league :(")
+            upcomingEventsViewProtocol.showErrorMessage(errorMessage: "1")
         } else {
             upcomingEventsViewProtocol.showLoading()
             NetworkManager().getUpcomingEvents(leagueId: id!, round: round!, upcomingEventsPresenterProtocol: self)
@@ -30,13 +30,14 @@ class UpcomingEventPresenter: UpcomingEventPresenterProtocol {
     //    Back
     
     func onSuccess(upcomingEvents: [UpcomingEvents]) {
-        print("onSecc Presenter")
+        print("onSecc UP Presenter \(upcomingEvents[0].idEvent) \(upcomingEvents[0].strStatus)")
         upcomingEventsViewProtocol.hideLoading()
         upcomingEventsViewProtocol.renderViewWithUpcomingEvents(events: upcomingEvents)
     }
     
     func onFail(errorMessage: String) {
+        print("onFail UP Presenter")
         upcomingEventsViewProtocol.hideLoading()
-        upcomingEventsViewProtocol.showErrorMessage(errorMessage: errorMessage)
+        upcomingEventsViewProtocol.showErrorMessage(errorMessage: "1\(errorMessage)")
     }
 }

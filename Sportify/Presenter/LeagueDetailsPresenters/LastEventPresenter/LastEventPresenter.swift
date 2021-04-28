@@ -21,7 +21,7 @@ class LastEventPresenter: LastEventPresenterProtocol {
             lastEventsViewProtocol.showLoading()
             NetworkManager().getLastEvents(leagueId: iD, lastEventsPresenterProtocol: self)
         } else {
-            lastEventsViewProtocol.showErrorMessage(errorMessage: "Failed To get Events For This League :(")
+            lastEventsViewProtocol.showErrorMessage(errorMessage: "2")
         }
     }
     
@@ -29,12 +29,14 @@ class LastEventPresenter: LastEventPresenterProtocol {
     //    Back
     
     func onSuccess(lastEvents: [LastEvents]) {
+        print("onSecc LA Presenter \(lastEvents[0].strHomeTeam) \(lastEvents[0].strStatus) \(lastEvents[1].intRound)")
         lastEventsViewProtocol.hideLoading()
         lastEventsViewProtocol.renderViewWithLastEvents(events: lastEvents)
     }
     
     func onFail(errorMessage: String) {
+        print("onFail LA Presenter")
         lastEventsViewProtocol.hideLoading()
-        lastEventsViewProtocol.showErrorMessage(errorMessage: errorMessage)
+        lastEventsViewProtocol.showErrorMessage(errorMessage: "2\(errorMessage)")
     }
 }
