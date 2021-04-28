@@ -10,6 +10,7 @@ import Foundation
 
 class FavoriteLeaguesPresenter: FavoriteLeaguePresenterProtocol{
     
+    
     weak var delegate:FavoriteLeagueViewProtocol?
     
     var localManager: LocalManager?
@@ -35,7 +36,9 @@ class FavoriteLeaguesPresenter: FavoriteLeaguePresenterProtocol{
     }
     
     func onItemClick(row: Int) {
-        delegate?.performActionWhenItemClick(row: row)
+        if checkConnectivity() {
+            delegate?.performActionWhenItemClick(row: row)
+        }
     }
     
     func onYoutubeClick(row: Int) {
@@ -47,7 +50,14 @@ class FavoriteLeaguesPresenter: FavoriteLeaguePresenterProtocol{
         localManager?.deleteData(leagueId: id)
     }
 
-    
+    func checkConnectivity() -> Bool{
+        if !Connectivity.isConnectedToInternet {
+            delegate?.onNoConnection()
+            return false
+        }
+        return true
+    }
+
     
     
     

@@ -19,7 +19,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     var activityIndicator: UIActivityIndicatorView!
     
     var leagueId: String?
-    var leagueCountry: Country?                                                 //leagueCountry Obj from AMRRRRRRRRRRRRRR
+    var leagueCountry: Country?
     
     var round: Int = 0 {
         didSet {
@@ -50,16 +50,15 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        title = leagueCountry?.strLeague
+        
         leagueDetailsPresenter = LeagueDetailsPresenter(leagueDetailsViewProtocol: self)
         
         teamsCell = TeamsTableViewCell()
         lastEventsCell = LastTableViewCell()
         upcomingEventsCell = UpcomingTableViewCell()
-        
-//        leagueId = 4335
-//        round = 37
-        
-        checkIfFavorite()                                                                    //LAST MODIFY
+      
+        checkIfFavorite()
         
         getTeamsList(id: leagueId)
         getLastEventsList(id: leagueId)
@@ -231,7 +230,7 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
     }
     
     func showErrorMessage(errorMessage: String) {
-        if (errorMessage.count > 1){
+        if (errorMessage.count > 2){
             let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
             let okAction  = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in /*any action needed*/}
             alert.addAction(okAction)

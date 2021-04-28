@@ -26,11 +26,17 @@ class FavoriteLeaguesTableViewController: UITableViewController, FavoriteLeagueV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Favorites"
+        
         let nibCell = UINib(nibName: Constants.LeaguesCellIdentifier, bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: Constants.LeaguesCellIdentifier)
         
         //presenter
         presenter = FavoriteLeaguesPresenter(delegate: self)
+        presenter?.getAllLeagues()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         presenter?.getAllLeagues()
     }
 
@@ -95,7 +101,7 @@ class FavoriteLeaguesTableViewController: UITableViewController, FavoriteLeagueV
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
             if isSearching {
-                presenter?.onItemDelete(row: indexPath.row, leagueId: filteredArray[indexPath.row].idLeague!)   // force unwrap idLeague
+                presenter?.onItemDelete(row: indexPath.row, leagueId: filteredArray[indexPath.row].idLeague!)
             } else {
                 presenter?.onItemDelete(row: indexPath.row, leagueId: leaguesArray[indexPath.row].idLeague!)
             }
@@ -107,7 +113,16 @@ class FavoriteLeaguesTableViewController: UITableViewController, FavoriteLeagueV
         presenter?.onYoutubeClick(row: button.tag)
     }
     
-    
+    func onNoConnection() {
+        let alertController = UIAlertController(title: "Error", message: "No Internet Connection", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel)
+        { action -> Void in
+            // Put your code here
+        })
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     
     // MARK: Amr Section
     
@@ -180,8 +195,8 @@ extension FavoriteLeaguesTableViewController:IAllLeaguesView{
 
 extension FavoriteLeaguesTableViewController : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredArray = leaguesArray.filter({ (country) -> Bool in
-            country.strLeague!.lowercased().prefix(searchText.count) == searchText.lowercased()
+        filteredArray = leaguesArray.filter({
+            $0.strLeague!.lowercased().prefix(searchText.count) == searchText.lowercased()
         })
         isSearching = true
         self.tableView.reloadData()

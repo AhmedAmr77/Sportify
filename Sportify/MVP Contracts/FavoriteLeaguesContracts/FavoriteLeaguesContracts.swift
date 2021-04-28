@@ -11,6 +11,8 @@ import Foundation
 protocol FavoriteLeagueViewProtocol: IAllLeaguesView {
     
     func performActionWhenItemDeleted(row:Int)
+    
+    func onNoConnection()
 }
 
 protocol FavoriteLeaguePresenterProtocol: IAllLeaguesPresenter {
@@ -18,5 +20,7 @@ protocol FavoriteLeaguePresenterProtocol: IAllLeaguesPresenter {
     func getAllLeagues()
     
     func onItemDelete(row:Int, leagueId id: String)
+    
+    func checkConnectivity() -> Bool
     
 }
