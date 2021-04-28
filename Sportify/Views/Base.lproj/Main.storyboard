@@ -631,7 +631,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="favoriteBtnOutlet" destination="7lc-xH-10B" id="56a-wW-v22"/>
+                        <outlet property="favoriteBtnOutlet" destination="7lc-xH-10B" id="9Wk-qf-xPe"/>
                         <outlet property="upcomingTableView" destination="Ktf-XF-mQB" id="NHR-lJ-yoq"/>
                     </connections>
                 </viewController>
@@ -647,9 +647,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="RWJ-mF-cFS">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="ejN-A6-ckY" id="5cV-pU-dVl"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iex-2P-DjI">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iex-2P-DjI" id="OgN-1X-6ni">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
@@ -663,6 +671,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="GZ1-HC-pZS"/>
+                    <connections>
+                        <outlet property="searchBar" destination="RWJ-mF-cFS" id="cj0-vr-Ibb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhg-OI-oGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

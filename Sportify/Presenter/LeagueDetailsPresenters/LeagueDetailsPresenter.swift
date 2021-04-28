@@ -10,123 +10,34 @@ import UIKit
 import CoreData
 
 class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
-    
-    
-    
-    
-    
-    
+
     //      sugg : add base Contract here !!
-    
-//    var teamsViewProtocol: TeamsViewProtocol!
-//
-//    init(teamsViewProtocol: TeamsViewProtocol) {
-//        self.teamsViewProtocol = teamsViewProtocol
-//    }
+        
+    var localSharedInstance: LocalManager?
     
     var leagueDetailsViewProtocol: LeagueDetailsViewProtocol!
     
-    var appDelegte: AppDelegate?
-    var leagueMngObj: NSManagedObject?
-    
     init(leagueDetailsViewProtocol: LeagueDetailsViewProtocol) {
         self.leagueDetailsViewProtocol = leagueDetailsViewProtocol
-        appDelegte = UIApplication.shared.delegate as? AppDelegate
+        localSharedInstance = LocalManager.sharedInstance
     }
     
  
     func checkIfFavorite(leagueId id: String) {
-        let context = appDelegte!.persistentContainer.viewContext
-        
-        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "FavoriteLeagues")
-
-        do{
-            let leagues = try context.fetch(fetchReq)
-            
-            for league in leagues {
-                if let item = league.value(forKey: "leagueId"){
-                    if item as! String == id{
-                        print("FOUNDDDDDDDDDD")
-                        leagueDetailsViewProtocol.isFound(founded: true)
-                        break
-                    } else {
-                        print("not11111")
-                    }
-                } else {
-                    print("not22222")
-                }
-            }
-            leagueDetailsViewProtocol.isFound(founded: false)         //???????????  line: 63
-        } catch {
-            print("CAAAAAAAAATCHHHHHHHH")
-        }
-        leagueDetailsViewProtocol.isFound(founded: false)
+        print("DetLeg - checkIfFavorite - \(id)")
+        localSharedInstance?.checkData(id: id, delegate: self)
     }
     
+    func isFound(founded: Bool) {
+        leagueDetailsViewProtocol.isFound(founded: founded)
+    }
     
-    func addToLocal(leagueId: String, teams: [Team], upc: [UpcomingEvents], las: [LastEvents]) {
-        print("start addToLocal in Presenter")
-        let appDelg = UIApplication.shared.delegate as? AppDelegate
-        let context = appDelg!.persistentContainer.viewContext
-        
-        print("\nDataAddedToArr")
-        let entity = NSEntityDescription.entity(forEntityName: "FavoriteLeagues", in: context)
-        print("\n11111111")
-        leagueMngObj = NSManagedObject(entity: entity!, insertInto: context)
-        print("\n22222222")
-        do{
-            leagueMngObj?.setValue(leagueId, forKey: "leagueId")
-            print("\n333333")
-            let teamsData = try NSKeyedArchiver.archivedData(withRootObject: teams, requiringSecureCoding: false)
-            print("\n44444")
-            leagueMngObj?.setValue(teamsData, forKey: "teams")
-            print("\n555555")
-            let upcomingData = try NSKeyedArchiver.archivedData(withRootObject: upc, requiringSecureCoding: false)
-            leagueMngObj?.setValue(upcomingData, forKey: "upcomingEvents")
-            let lastData = try NSKeyedArchiver.archivedData(withRootObject: las, requiringSecureCoding: false)
-            leagueMngObj?.setValue(lastData, forKey: "lastEvents")
-        } catch {
-            print("error occurred  archiving")
-        }
-        do{
-            try context.save()
-            print("\nDataAddedToLocal")
-        } catch {
-            print("CATCH WHEN SAVE")
-        }
-        
-        print("\nDataSaved")
+    func addToLocal(leagueId: String, leagueCountry: Country) {
+        localSharedInstance?.addData(leagueId: leagueId, leagueCountry: leagueCountry)
     }
     
     func removeFromLocal(leagueId id: String) {
-        let context = appDelegte!.persistentContainer.viewContext
-        
-        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "FavoriteLeagues")
-
-        do{
-            let leagues = try context.fetch(fetchReq)
-            
-            for league in leagues {
-                if let item = league.value(forKey: "leagueId"){
-                    if item as! String == id{
-                        print("FOUNDDDDDDDDDD  DLT")
-                        context.delete(item as! NSManagedObject)
-                        break
-                    } else {
-                        print("not11111  DLT")
-                    }
-                } else {
-                    print("not22222  DLT")
-                }
-            }
-            
-            try context.save()
-            print("\nDataDeletedFromLocal  DLT")
-        } catch {
-            print("CAAAAAAAAATCHHHHHHHH  DLT")
-        }
-        
-        print("Finish Removing  DLT")
+        localSharedInstance?.deleteData(leagueId: id)
     }
 }
    

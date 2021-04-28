@@ -19,6 +19,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     var activityIndicator: UIActivityIndicatorView!
     
     var leagueId: String?
+    var leagueCountry: Country?                                                 //leagueCountry Obj from AMRRRRRRRRRRRRRR
     
     var round: Int = 0 {
         didSet {
@@ -80,6 +81,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func checkIfFavorite() {                                              // make sure that league id will never be nil
+        print("DetLeag - checkIfFavorite - \(leagueId!)")
         leagueDetailsPresenter.checkIfFavorite(leagueId: leagueId!)  //  ??AAAAMMMMMRRRRR
     }
     
@@ -90,7 +92,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             sender.image = UIImage(systemName: "heart.fill")
 //            sender.image?.withTintColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
             sender.tag = 1
-            leagueDetailsPresenter.addToLocal(leagueId: leagueId!, teams: teamsArr, upc: upcomingEvents, las: lastEvents)
+            leagueDetailsPresenter.addToLocal(leagueId: leagueId!, leagueCountry: leagueCountry!)
         } else {
             print("Fav Pressed tag = 1")
             sender.image = UIImage(systemName: "heart")
@@ -197,7 +199,7 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
         let teamDetailsVC = storyboard?.instantiateViewController(identifier: Constants.teamDetailsViewController) as! TeamDetailsTableViewController
         teamDetailsVC.teamId = teamsArr[row].idTeam
         navigationController?.pushViewController(teamDetailsVC, animated: true)
-        print("row => \(row) \nID => \(teamsArr[row].idTeam)")
+//        print("row => \(row) \nID => \(teamsArr[row].idTeam)")
     }
 //    
 //    func rowSelected(row: Int, teamsViewProtocol: TeamsViewProtocol) {

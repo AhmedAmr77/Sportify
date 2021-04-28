@@ -18,4 +18,7 @@ protocol LeagueDetailsPresenterProtocol {
     
     func checkIfFavorite(leagueId id: String)
     
+    
+    func isFound(founded: Bool)
+    
 }
