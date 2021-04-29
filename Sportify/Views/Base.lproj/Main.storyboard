@@ -12,7 +12,7 @@
         <scene sceneID="FlV-XJ-TTE">
             <objects>
                 <tableViewController storyboardIdentifier="TeamDetailsTableViewController" title="Team Details" id="M9W-WW-Uof" customClass="TeamDetailsTableViewController" customModule="Sportify" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="opx-ud-C6v">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="opx-ud-C6v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -27,34 +27,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="eek-9f-A5S">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="GDP-IE-cPE">
                                                     <rect key="frame" x="20" y="148" width="80" height="80"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TeamName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-uP-2Mv">
-                                                    <rect key="frame" x="118" y="196" width="118" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TeamName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-uP-2Mv">
+                                                    <rect key="frame" x="115" y="194" width="259" height="28.666666666666657"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb" translatesAutoresizingMaskIntoConstraints="NO" id="PyJ-aH-QBp">
-                                                    <rect key="frame" x="318" y="187" width="20" height="26"/>
+                                                    <rect key="frame" x="318" y="167" width="20" height="26"/>
                                                     <gestureRecognizers/>
                                                     <connections>
                                                         <outletCollection property="gestureRecognizers" destination="QP1-dO-3HO" appends="YES" id="hcX-9a-710"/>
                                                     </connections>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="ral-bn-XrN">
-                                                    <rect key="frame" x="346" y="187" width="20" height="26"/>
+                                                    <rect key="frame" x="346" y="167" width="20" height="26"/>
                                                     <gestureRecognizers/>
                                                     <connections>
                                                         <outletCollection property="gestureRecognizers" destination="vUk-lO-fl1" appends="YES" id="f2g-Ui-veO"/>
                                                     </connections>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtube" translatesAutoresizingMaskIntoConstraints="NO" id="z3Z-oS-MKU">
-                                                    <rect key="frame" x="374" y="187" width="20" height="26"/>
+                                                    <rect key="frame" x="374" y="167" width="20" height="26"/>
                                                     <gestureRecognizers/>
                                                     <connections>
                                                         <outletCollection property="gestureRecognizers" destination="Ntz-DI-hvx" appends="YES" id="HF8-Fv-bhT"/>
@@ -64,32 +63,35 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="eek-9f-A5S" secondAttribute="trailing" id="08U-j2-RnX"/>
                                                 <constraint firstItem="eek-9f-A5S" firstAttribute="leading" secondItem="e1K-Fb-vQD" secondAttribute="leading" id="8fJ-Na-ctN"/>
-                                                <constraint firstAttribute="bottom" secondItem="eek-9f-A5S" secondAttribute="bottom" constant="60" id="CjD-rY-dCn"/>
+                                                <constraint firstAttribute="bottom" secondItem="eek-9f-A5S" secondAttribute="bottom" constant="80" id="CjD-rY-dCn"/>
+                                                <constraint firstItem="zGp-uP-2Mv" firstAttribute="top" secondItem="eek-9f-A5S" secondAttribute="bottom" constant="35" id="DfT-iq-09F"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ral-bn-XrN" secondAttribute="trailing" constant="28" id="Els-sJ-roT"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="z3Z-oS-MKU" secondAttribute="bottom" constant="15" id="HhM-1K-SGy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="z3Z-oS-MKU" secondAttribute="bottom" constant="35" id="HhM-1K-SGy"/>
                                                 <constraint firstItem="GDP-IE-cPE" firstAttribute="bottom" secondItem="e1K-Fb-vQD" secondAttribute="bottomMargin" id="JZ8-rU-3vJ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GDP-IE-cPE" secondAttribute="trailing" constant="294" id="UY3-Uw-x2x"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="PyJ-aH-QBp" secondAttribute="bottom" constant="15" id="XCG-dH-PN6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PyJ-aH-QBp" secondAttribute="bottom" constant="35" id="XCG-dH-PN6"/>
                                                 <constraint firstItem="GDP-IE-cPE" firstAttribute="leading" secondItem="e1K-Fb-vQD" secondAttribute="leadingMargin" id="Xn9-g5-L9N"/>
                                                 <constraint firstItem="z3Z-oS-MKU" firstAttribute="trailing" secondItem="e1K-Fb-vQD" secondAttribute="trailingMargin" id="cuE-Qe-634"/>
                                                 <constraint firstItem="eek-9f-A5S" firstAttribute="top" secondItem="e1K-Fb-vQD" secondAttribute="top" id="edw-o9-4jo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zGp-uP-2Mv" secondAttribute="trailing" constant="20" id="epY-W2-HM0"/>
                                                 <constraint firstItem="z3Z-oS-MKU" firstAttribute="top" secondItem="eek-9f-A5S" secondAttribute="bottom" constant="8" id="ikC-53-xTZ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="PyJ-aH-QBp" secondAttribute="trailing" constant="56" id="lG9-zy-Wg5"/>
                                                 <constraint firstItem="ral-bn-XrN" firstAttribute="top" secondItem="eek-9f-A5S" secondAttribute="bottom" constant="8" id="lHy-81-MaI"/>
                                                 <constraint firstItem="PyJ-aH-QBp" firstAttribute="top" secondItem="eek-9f-A5S" secondAttribute="bottom" constant="8" id="lWl-6l-v9R"/>
                                                 <constraint firstItem="PyJ-aH-QBp" firstAttribute="leading" secondItem="GDP-IE-cPE" secondAttribute="trailing" constant="218" id="mIo-Ri-53J"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ral-bn-XrN" secondAttribute="bottom" constant="15" id="qnx-y2-Ecu"/>
+                                                <constraint firstItem="zGp-uP-2Mv" firstAttribute="leading" secondItem="GDP-IE-cPE" secondAttribute="trailing" constant="15" id="qRH-Y7-NGK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ral-bn-XrN" secondAttribute="bottom" constant="35" id="qnx-y2-Ecu"/>
                                                 <constraint firstItem="GDP-IE-cPE" firstAttribute="top" secondItem="e1K-Fb-vQD" secondAttribute="topMargin" constant="137" id="qzj-PX-r1Y"/>
                                                 <constraint firstItem="ral-bn-XrN" firstAttribute="leading" secondItem="PyJ-aH-QBp" secondAttribute="trailing" constant="8" id="vlq-RX-oOg"/>
                                                 <constraint firstItem="z3Z-oS-MKU" firstAttribute="leading" secondItem="ral-bn-XrN" secondAttribute="trailing" constant="8" id="yaw-7F-cow"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xcE-xj-D5x">
-                                        <rect key="frame" x="0.0" y="267" width="414" height="1297"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="xcE-xj-D5x">
+                                        <rect key="frame" x="0.0" y="267" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xcE-xj-D5x" id="6M6-A5-8Qy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1297"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xcE-xj-D5x" id="6M6-A5-8Qy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Founded:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kuy-e5-RgS">
@@ -134,20 +136,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yV-as-5pC">
-                                                    <rect key="frame" x="19.999999999999993" y="152" width="105.33333333333331" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Kn-aj-mPu">
-                                                    <rect key="frame" x="20" y="185.99999999999994" width="374" height="953.66666666666652"/>
-                                                    <string key="text">"Arsenal Football Club is a professional football club based in Islington, London, England, that plays in the Premier League, the top flight of English football. The club has won 13 League titles, a record 13 FA Cups, 2 League Cups, 15 FA Community Shields, 1 League Centenary Trophy, 1 UEFA Cup Winners' Cup and 1 Inter-Cities Fairs Cup. Arsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division, and have won the second-most top-flight matches in English football history. In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position. Herbert Chapman won Arsenal's first national trophies, but died prematurely. He helped introduce the WM formation, floodlights, and shirt numbers, and added the white sleeves and brighter red to the club's kit. Arsène Wenger was the longest-serving manager and won the most trophies. He won a record 7 FA Cups, and his title-winning team set an English record for the longest top-flight unbeaten league run at 49 games between 2003 and 2004, receiving the nickname The Invincibles. In 1886, Woolwich munitions workers founded the club as Dial Square. In 1913, the club crossed the city to Arsenal Stadium in Highbury, becoming close neighbours of Tottenham Hotspur, and creating the North London derby. In 2006, they moved to the nearby Emirates Stadium. In terms of revenue, Arsenal is the ninth highest-earning football club in the world, earned €487.6m in 2016–17 season. Based on social media activity from 2014 to 2015, Arsenal's fanbase is the fifth largest in the world. In 2018, Forbes estimated the club was the third most valuable in England, with the club being worth $2.24 billion."
-</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Id5-c5-fNx">
                                                     <rect key="frame" x="324" y="11" width="60" height="110"/>
                                                     <constraints>
@@ -165,17 +153,12 @@
                                                 <constraint firstItem="wwi-tE-L8T" firstAttribute="centerY" secondItem="eu5-AV-Ii0" secondAttribute="centerY" id="0Qq-MJ-zQ5"/>
                                                 <constraint firstItem="5mJ-oC-mTL" firstAttribute="centerY" secondItem="8wT-wr-tij" secondAttribute="centerY" id="0gX-vd-zfF"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pcq-6f-imv" secondAttribute="trailing" constant="5" id="4tu-5a-30t"/>
-                                                <constraint firstItem="7Kn-aj-mPu" firstAttribute="leading" secondItem="6M6-A5-8Qy" secondAttribute="leadingMargin" id="Aum-Ze-vmJ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Id5-c5-fNx" secondAttribute="trailing" constant="10" id="Cfw-l6-06I"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="7Kn-aj-mPu" secondAttribute="bottom" id="CoN-cE-T2J"/>
                                                 <constraint firstItem="Id5-c5-fNx" firstAttribute="top" secondItem="6M6-A5-8Qy" secondAttribute="topMargin" id="G1r-wi-4vl"/>
                                                 <constraint firstItem="eu5-AV-Ii0" firstAttribute="top" secondItem="Kuy-e5-RgS" secondAttribute="bottom" constant="10" id="HCI-Vb-ALX"/>
                                                 <constraint firstItem="lja-D5-ARv" firstAttribute="centerY" secondItem="Kuy-e5-RgS" secondAttribute="centerY" id="HbL-3y-XYX"/>
                                                 <constraint firstItem="Kuy-e5-RgS" firstAttribute="top" secondItem="6M6-A5-8Qy" secondAttribute="topMargin" constant="5" id="Jnc-5y-OvZ"/>
-                                                <constraint firstItem="7Kn-aj-mPu" firstAttribute="top" secondItem="0yV-as-5pC" secondAttribute="bottom" constant="10" id="K00-ne-IcC"/>
-                                                <constraint firstItem="0yV-as-5pC" firstAttribute="top" secondItem="aPV-4i-FpU" secondAttribute="bottom" constant="10" id="MKe-pj-c8i"/>
                                                 <constraint firstItem="aPV-4i-FpU" firstAttribute="leading" secondItem="6M6-A5-8Qy" secondAttribute="leadingMargin" id="NeG-bJ-YYm"/>
-                                                <constraint firstItem="0yV-as-5pC" firstAttribute="leading" secondItem="6M6-A5-8Qy" secondAttribute="leadingMargin" id="OLt-Dw-adw"/>
                                                 <constraint firstItem="pcq-6f-imv" firstAttribute="centerY" secondItem="aPV-4i-FpU" secondAttribute="centerY" id="RbU-h6-XVp"/>
                                                 <constraint firstItem="aPV-4i-FpU" firstAttribute="top" secondItem="8wT-wr-tij" secondAttribute="bottom" constant="10" id="UGx-dt-EDX"/>
                                                 <constraint firstItem="8wT-wr-tij" firstAttribute="leading" secondItem="6M6-A5-8Qy" secondAttribute="leadingMargin" id="Vqr-SG-ekD"/>
@@ -188,7 +171,38 @@
                                                 <constraint firstItem="Kuy-e5-RgS" firstAttribute="leading" secondItem="6M6-A5-8Qy" secondAttribute="leadingMargin" id="ffp-i6-6tB"/>
                                                 <constraint firstItem="Id5-c5-fNx" firstAttribute="leading" secondItem="6M6-A5-8Qy" secondAttribute="leadingMargin" constant="304" id="jcn-N1-FtU"/>
                                                 <constraint firstItem="wwi-tE-L8T" firstAttribute="leading" secondItem="eu5-AV-Ii0" secondAttribute="trailing" constant="22.329999999999998" id="tV6-7T-zb4"/>
-                                                <constraint firstAttribute="trailing" secondItem="7Kn-aj-mPu" secondAttribute="trailing" constant="20" id="x0C-KU-e9a"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="1300" id="ovv-be-icb">
+                                        <rect key="frame" x="0.0" y="467" width="414" height="1300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ovv-be-icb" id="Bb1-rz-Lt8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yV-as-5pC">
+                                                    <rect key="frame" x="10" y="10" width="404" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Kn-aj-mPu">
+                                                    <rect key="frame" x="10" y="40" width="394" height="913"/>
+                                                    <string key="text">"Arsenal Football Club is a professional football club based in Islington, London, England, that plays in the Premier League, the top flight of English football. The club has won 13 League titles, a record 13 FA Cups, 2 League Cups, 15 FA Community Shields, 1 League Centenary Trophy, 1 UEFA Cup Winners' Cup and 1 Inter-Cities Fairs Cup. Arsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division, and have won the second-most top-flight matches in English football history. In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position. Herbert Chapman won Arsenal's first national trophies, but died prematurely. He helped introduce the WM formation, floodlights, and shirt numbers, and added the white sleeves and brighter red to the club's kit. Arsène Wenger was the longest-serving manager and won the most trophies. He won a record 7 FA Cups, and his title-winning team set an English record for the longest top-flight unbeaten league run at 49 games between 2003 and 2004, receiving the nickname The Invincibles. In 1886, Woolwich munitions workers founded the club as Dial Square. In 1913, the club crossed the city to Arsenal Stadium in Highbury, becoming close neighbours of Tottenham Hotspur, and creating the North London derby. In 2006, they moved to the nearby Emirates Stadium. In terms of revenue, Arsenal is the ninth highest-earning football club in the world, earned €487.6m in 2016–17 season. Based on social media activity from 2014 to 2015, Arsenal's fanbase is the fifth largest in the world. In 2018, Forbes estimated the club was the third most valuable in England, with the club being worth $2.24 billion."
+</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0yV-as-5pC" firstAttribute="leading" secondItem="Bb1-rz-Lt8" secondAttribute="leading" constant="10" id="3Wt-mD-boT"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Kn-aj-mPu" secondAttribute="trailing" constant="10" id="NbW-gL-dBV"/>
+                                                <constraint firstItem="0yV-as-5pC" firstAttribute="top" secondItem="Bb1-rz-Lt8" secondAttribute="top" constant="10" id="PIb-vJ-L68"/>
+                                                <constraint firstItem="7Kn-aj-mPu" firstAttribute="leading" secondItem="Bb1-rz-Lt8" secondAttribute="leading" constant="10" id="RjU-bn-1ot"/>
+                                                <constraint firstAttribute="trailing" secondItem="0yV-as-5pC" secondAttribute="trailing" id="Yfi-ie-cbN"/>
+                                                <constraint firstItem="7Kn-aj-mPu" firstAttribute="top" secondItem="Bb1-rz-Lt8" secondAttribute="top" constant="40" id="obl-0F-haQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
