@@ -14,6 +14,7 @@ enum ApplicationNetworking{
     case getAllLeagues(sport:String)
     case getTeamDetails(id:String)
     case getTeams(id:String)
+    case getLastEvents(id:String)
 }
 
 extension ApplicationNetworking : TargetType {
@@ -35,6 +36,8 @@ extension ApplicationNetworking : TargetType {
             return Constants.getTeamDetails
         case .getTeams:
             return Constants.getTeams
+        case .getLastEvents:
+            return Constants.getLastEvents
         }
     }
     
@@ -48,6 +51,8 @@ extension ApplicationNetworking : TargetType {
             return .get
         case .getTeams:
             return .get
+        case .getLastEvents:
+            return .get
         }
     }
     
@@ -60,6 +65,8 @@ extension ApplicationNetworking : TargetType {
         case .getTeamDetails(let id):
             return .requestParameters(parameters: ["id":id], encoding: URLEncoding.default)   //for get,head or delete use URLEncoding.default
         case .getTeams(let id):
+            return .requestParameters(parameters: ["id":id], encoding: URLEncoding.default)
+        case .getLastEvents(let id):
             return .requestParameters(parameters: ["id":id], encoding: URLEncoding.default)
         }
     }

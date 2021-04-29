@@ -43,13 +43,13 @@ class TeamsPresenter: TeamsPresenterProtocol {
     //    Back
     
     func onSuccess(teams: [Team]) {
-        print("onSucc TM Presenter \(teams[0].idTeam) \(teams[0].strTeam)")
+//        print("onSucc TM Presenter \(teams[0].idTeam) \(teams[0].strTeam)")
         teamsViewProtocol.hideLoading()
         teamsViewProtocol.renderViewWithTeams(teams: teams)
     }
     
     func onFail(errorMessage: String) {
-        print("onFail TM Presenter")
+//        print("onFail TM Presenter")
         teamsViewProtocol.hideLoading()
         teamsViewProtocol.showErrorMessage(errorMessage: "3\(errorMessage)")
     }

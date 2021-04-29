@@ -43,8 +43,14 @@ extension SportsAPI: TeamsManagerProtocol {
             completion(result)
         }
     }
-    
-    
+}
+
+extension SportsAPI: LastEventManagerProtocol {
+    func getLastEvents(leagueId: String, completion: @escaping (Result<LastEventsJSON?, NSError>) -> Void) {
+        self.fetchData(target: .getLastEvents(id: leagueId), responseClass: LastEventsJSON.self) { (result) in
+            completion(result)
+        }
+    }
     
     
 }
