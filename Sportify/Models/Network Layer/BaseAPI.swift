@@ -20,7 +20,7 @@ class BaseAPI<T:TargetType> {
                 guard let statusCode = response.response?.statusCode else {
                     //add custom Error
                     let error = NSError(domain: target.baseURL, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.genericError])
-                    print("at guard statusCode"+(error as! String))
+                    print("at guard statusCode")
                     completion(.failure(error))
                     return
                 }
