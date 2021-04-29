@@ -51,6 +51,12 @@ extension SportsAPI: LastEventManagerProtocol {
             completion(result)
         }
     }
-    
-    
+}
+
+extension SportsAPI: UpcomingEventManagerProtocol {
+    func getUpcomingEvents(leagueId: String, round: String, completion: @escaping (Result<UpcomingEventsJSON?, NSError>) -> Void) {
+        fetchData(target: .getUpcomingEvents(id: leagueId, round: round), responseClass: UpcomingEventsJSON.self) { (result) in
+            completion(result)	
+        }
+    }
 }

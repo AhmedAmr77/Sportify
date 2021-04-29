@@ -21,7 +21,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     var leagueId: String?
     var leagueCountry: Country?
     
-    var round: Int = 0 {
+    var round: String = "0" {
         didSet {
             getUpcomingEventsList(id:leagueId, round: round)
         }
@@ -75,7 +75,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         LastEventPresenter(lastEventsViewProtocol: self).getEvents(leagueId: id)
     }
     
-    func getUpcomingEventsList(id: String?, round: Int?) {
+    func getUpcomingEventsList(id: String?, round: String?) {
         UpcomingEventPresenter(upcomingEventsViewProtocol: self).getEvents(leagueId: id, round: round)
     }
     
@@ -259,7 +259,8 @@ extension LeagueDetailsViewController: LastEventViewProtocol{
         lastEvents = events
         
         if let roundStr = events[0].intRound{
-            round = Int(roundStr)! + 1
+            let roundInt = Int(roundStr)! + 1
+            round = String(roundInt)
         } else {
             upcomingEventsCell?.showErrorMessage(errorMessage: "errorMessageeeeeeeeeee")  // WRONG PLACE 
         }
