@@ -470,8 +470,8 @@
 			isa = PBXGroup;
 			children = (
 				C213EF7C2637FF7200C0E6A2 /* Network Layer */,
-				0DDC6B522630D74E00A4B002 /* Local Manager */,
 				0DDC6B4F2630D74E00A4B002 /* Network Manager */,
+				0DDC6B522630D74E00A4B002 /* Local Manager */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -36,3 +36,15 @@ extension SportsAPI : IAllLeaguesManager{
         }
     }
 }
+
+extension SportsAPI: TeamsManagerProtocol {
+    func getTeams(leagueId: String, completion: @escaping (Result<TeamsJSON?, NSError>) -> Void) {
+        self.fetchData(target: .getTeams(id: leagueId), responseClass: TeamsJSON.self) { (result) in
+            completion(result)
+        }
+    }
+    
+    
+    
+    
+}

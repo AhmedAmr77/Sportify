@@ -12,17 +12,30 @@ class TeamsPresenter: TeamsPresenterProtocol {
     
     var teamsViewProtocol: TeamsViewProtocol!
     
+    var networkManager: TeamsManagerProtocol?
+    
     init(teamsViewProtocol: TeamsViewProtocol) {
         self.teamsViewProtocol = teamsViewProtocol
+        networkManager = SportsAPI.shared
     }
     
     func getTeams(leagueId id: String?) {
-        if let iD = id {
-            teamsViewProtocol.showLoading()
-            NetworkManager().getTeams(leagueId: iD, teamsPresenterProtocol: self)
-        } else {
-            teamsViewProtocol.showErrorMessage(errorMessage: "3")
-        }
+        teamsViewProtocol.showLoading()
+        networkManager?.getTeams(leagueId: id!, completion: { (result) in
+            switch result {
+            case .success(let response):
+                self.onSuccess(teams: response!.teams!)
+            case .failure(let error):
+                self.onFail(errorMessage: error.localizedDescription)
+            }
+        })
+        
+//        if let iD = id {
+//            teamsViewProtocol.showLoading()
+//            NetworkManager().getTeams(leagueId: iD, teamsPresenterProtocol: self)
+//        } else {
+//            teamsViewProtocol.showErrorMessage(errorMessage: "3")
+//        }
         
     }
     
