@@ -64,11 +64,11 @@ class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollect
         for item in upcomingEventsTeamsArray {
                         
             if self.upcomingEventsArray[indexPath.row].strHomeTeam == item.strTeam  {
-                cell.team1ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
+                cell.team1ImageView.sd_setImage(with: URL(string: item.strTeamBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
             }
             
             if self.upcomingEventsArray[indexPath.row].strAwayTeam == item.strTeam  {
-                cell.team2ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
+                cell.team2ImageView.sd_setImage(with: URL(string: item.strTeamBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
             }
         }
         

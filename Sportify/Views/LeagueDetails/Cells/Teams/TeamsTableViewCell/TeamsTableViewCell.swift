@@ -56,7 +56,7 @@ class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.teamsCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TeamsCollectionViewCell
-        cell.teamImageView.sd_setImage(with: URL(string: teamsArray[indexPath.row].strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
+        cell.teamImageView.sd_setImage(with: URL(string: teamsArray[indexPath.row].strTeamBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
         cell.teamName.text = teamsArray[indexPath.row].strTeam
         
         cell.layer.cornerRadius = cell.frame.width / 4

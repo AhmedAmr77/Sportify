@@ -87,9 +87,9 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         UpcomingEventPresenter(upcomingEventsViewProtocol: self).getEvents(leagueId: id, round: round)
     }
     
-    func checkIfFavorite() {                                              // make sure that league id will never be nil
-        print("DetLeag - checkIfFavorite - \(leagueId!)")
-        leagueDetailsPresenter.checkIfFavorite(leagueId: leagueId!)  //  ??AAAAMMMMMRRRRR
+    func checkIfFavorite() {
+        print("DetLeag - checkIfFavorite - \(leagueId)")
+        leagueDetailsPresenter.checkIfFavorite(leagueId: leagueId)
     }
     
 
@@ -99,12 +99,12 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             sender.image = UIImage(systemName: "heart.fill")
 //            sender.image?.withTintColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
             sender.tag = 1
-            leagueDetailsPresenter.addToLocal(leagueId: leagueId!, leagueCountry: leagueCountry!)
+            leagueDetailsPresenter.addToLocal(leagueId: leagueId, leagueCountry: leagueCountry)
         } else {
             print("Fav Pressed tag = 1")
             sender.image = UIImage(systemName: "heart")
             sender.tag = 0
-            leagueDetailsPresenter.removeFromLocal(leagueId: leagueId!)
+            leagueDetailsPresenter.removeFromLocal(leagueId: leagueId)
         }
     }
     

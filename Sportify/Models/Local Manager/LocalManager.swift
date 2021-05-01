@@ -51,7 +51,7 @@ class LocalManager {
         delegate.isFound(founded: false)       // is it useful
     }
     
-    func addData(leagueId: String, leagueCountry: Country) {              // response onSuccess or Fail
+    func addData(leagueId: String, leagueCountry: Country) {              // response WHEN onSuccess or Fail  (missing)
         print("start addToLocal in Presenter")
         let appDelegte = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegte!.persistentContainer.viewContext
@@ -72,7 +72,7 @@ class LocalManager {
         print("\nDataSaved")
     }
     
-    func deleteData(leagueId: String) {                                  // response  onSuccess or Fail
+    func deleteData(leagueId: String) {                                  // no response when onSuccess or Fail (missing)
         let appDelegte = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegte!.persistentContainer.viewContext
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "FavoriteLeagues")

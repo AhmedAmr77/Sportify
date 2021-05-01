@@ -45,9 +45,9 @@ class FavoriteLeaguesPresenter: FavoriteLeaguePresenterProtocol{
         delegate?.performActionWhenYoutubeClick(row: row)
     }
     
-    func onItemDelete(row: Int, leagueId id: String) {
+    func onItemDelete(row: Int, leagueId id: String?) {
         delegate?.performActionWhenItemDeleted(row: row)
-        localManager?.deleteData(leagueId: id)
+        localManager?.deleteData(leagueId: id!)
     }
 
     func checkConnectivity() -> Bool{

@@ -65,7 +65,7 @@ class LastTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
             }
             
             if self.lastEventsArray[indexPath.row].strAwayTeam == item.strTeam  {
-                cell.team2ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
+                cell.team2ImageView.sd_setImage(with: URL(string: item.strTeamBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
             }
         }
         

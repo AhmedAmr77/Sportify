@@ -101,9 +101,9 @@ class FavoriteLeaguesTableViewController: UITableViewController, FavoriteLeagueV
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
             if isSearching {
-                presenter?.onItemDelete(row: indexPath.row, leagueId: filteredArray[indexPath.row].idLeague!)
+                presenter?.onItemDelete(row: indexPath.row, leagueId: filteredArray[indexPath.row].idLeague)
             } else {
-                presenter?.onItemDelete(row: indexPath.row, leagueId: leaguesArray[indexPath.row].idLeague!)
+                presenter?.onItemDelete(row: indexPath.row, leagueId: leaguesArray[indexPath.row].idLeague)
             }
             
         }

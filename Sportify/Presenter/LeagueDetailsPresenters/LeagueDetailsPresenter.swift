@@ -23,21 +23,25 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     }
     
  
-    func checkIfFavorite(leagueId id: String) {
-        print("DetLeg - checkIfFavorite - \(id)")
-        localSharedInstance?.checkData(id: id, delegate: self)
+    func checkIfFavorite(leagueId id: String?) {
+        print("DetLeg - checkIfFavorite - \(id!)")
+        localSharedInstance?.checkData(id: id!, delegate: self)
     }
     
     func isFound(founded: Bool) {
         leagueDetailsViewProtocol.isFound(founded: founded)
     }
     
-    func addToLocal(leagueId: String, leagueCountry: Country) {
-        localSharedInstance?.addData(leagueId: leagueId, leagueCountry: leagueCountry)
+    func addToLocal(leagueId: String?, leagueCountry: Country?) {
+        if let leagueCountry = leagueCountry {
+            localSharedInstance?.addData(leagueId: leagueId!, leagueCountry: leagueCountry)
+        } else {
+            leagueDetailsViewProtocol.showErrorMessage(errorMessage: "There is no data to add to favorite!")
+        }
     }
     
-    func removeFromLocal(leagueId id: String) {
-        localSharedInstance?.deleteData(leagueId: id)
+    func removeFromLocal(leagueId id: String?) {
+        localSharedInstance?.deleteData(leagueId: id!)
     }
 }
    
