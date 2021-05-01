@@ -17,7 +17,6 @@ class LastTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
     
     var activityIndicator: UIActivityIndicatorView!
     
-    
     @IBOutlet weak var errorImageView: UIImageView!
   
     @IBOutlet weak var lastEventCollectionView: UICollectionView!{
@@ -123,12 +122,15 @@ extension LastTableViewCell: LastEventViewProtocol{
     func showLoading() {
         activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.center = self.lastEventCollectionView.center
+        self.activityIndicator.center = self.contentView.center
+//        self.contentView.addSubview(activityIndicator)
         activityIndicator.startAnimating()
+        print("collVi start ActInd   last")
     }
     
     func hideLoading() {
-        activityIndicator.stopAnimating()
+        activityIndicator?.stopAnimating()
+        print("collVi stop ActInd   last")
     }
     
     func showErrorMessage(errorMessage: String) {

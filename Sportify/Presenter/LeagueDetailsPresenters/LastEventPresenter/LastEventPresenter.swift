@@ -24,7 +24,11 @@ class LastEventPresenter: LastEventPresenterProtocol {
         networkManager?.getLastEvents(leagueId: id!, completion: { (result) in
             switch result {
             case .success(let response):
-                self.onSuccess(lastEvents: response!.events!)
+                if let events = response?.events {
+                    self.onSuccess(lastEvents: events)
+                } else {
+                    self.onFail(errorMessage: "")
+                }
             case .failure(let error):
                 self.onFail(errorMessage: error.localizedDescription)
             }

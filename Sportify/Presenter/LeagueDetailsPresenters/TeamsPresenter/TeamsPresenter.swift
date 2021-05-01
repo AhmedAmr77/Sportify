@@ -24,7 +24,12 @@ class TeamsPresenter: TeamsPresenterProtocol {
         networkManager?.getTeams(leagueId: id!, completion: { (result) in
             switch result {
             case .success(let response):
-                self.onSuccess(teams: response!.teams!)
+                if let teams = response?.teams {
+                    self.onSuccess(teams: teams)
+                } else {
+                    self.onFail(errorMessage: "")
+                }
+                
             case .failure(let error):
                 self.onFail(errorMessage: error.localizedDescription)
             }

@@ -35,7 +35,8 @@ class UpcomingEventPresenter: UpcomingEventPresenterProtocol {
                 }
             })
         } else {
-            upcomingEventsViewProtocol.showErrorMessage(errorMessage: "1")
+            self.onFail(errorMessage: "")
+            print("UP round Nil")
         }
         
         
@@ -57,7 +58,7 @@ class UpcomingEventPresenter: UpcomingEventPresenterProtocol {
     }
     
     func onFail(errorMessage: String) {
-//        print("onFail UP Presenter")
+        print("onFail UP Presenter")
         upcomingEventsViewProtocol.hideLoading()
         upcomingEventsViewProtocol.showErrorMessage(errorMessage: "1\(errorMessage)")
     }

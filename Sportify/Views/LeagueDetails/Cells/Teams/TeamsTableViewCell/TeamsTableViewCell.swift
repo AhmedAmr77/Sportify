@@ -17,8 +17,7 @@ class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollection
     var activityIndicator: UIActivityIndicatorView!
     
     var controllerDelegate: TeamsViewProtocol?
-    
-    
+        
     @IBOutlet weak var errorImageView: UIImageView!
     
     @IBOutlet weak var teamsCollectionView: UICollectionView!{
@@ -86,14 +85,15 @@ extension TeamsTableViewCell: TeamsViewProtocol{
     func showLoading() {
         activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.center = self.teamsCollectionView.center
+        self.activityIndicator.center = self.contentView.center
+//        self.contentView.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        print("collVi start ActInd")
+        print("collVi start ActInd   Teams")
     }
     
     func hideLoading() {
         activityIndicator.stopAnimating()
-        print("collVi stop ActInd")
+        print("collVi stop ActInd   Teams")
     }
     
     func showErrorMessage(errorMessage: String) {
