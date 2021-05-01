@@ -265,6 +265,7 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
                 upcomingEventsCell?.showErrorMessage(errorMessage: "")
             case 2:
                 lastEventsCell?.showErrorMessage(errorMessage: "")
+                upcomingEventsCell?.showErrorMessage(errorMessage: "")
             case 3:
                 teamsCell?.showErrorMessage(errorMessage: "")
             default:
