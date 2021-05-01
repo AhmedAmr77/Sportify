@@ -99,13 +99,13 @@ class FavoriteLeaguesTableViewController: UITableViewController, FavoriteLeagueV
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
             if isSearching {
                 presenter?.onItemDelete(row: indexPath.row, leagueId: filteredArray[indexPath.row].idLeague)
             } else {
                 presenter?.onItemDelete(row: indexPath.row, leagueId: leaguesArray[indexPath.row].idLeague)
             }
-            
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
