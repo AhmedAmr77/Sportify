@@ -61,7 +61,7 @@ class LastTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
         for item in lastEventsTeamsArray {
                         
             if self.lastEventsArray[indexPath.row].strHomeTeam == item.strTeam  {
-                cell.team1ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
+                cell.team1ImageView.sd_setImage(with: URL(string: item.strTeamBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
             }
             
             if self.lastEventsArray[indexPath.row].strAwayTeam == item.strTeam  {
