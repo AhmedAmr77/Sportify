@@ -72,6 +72,9 @@
 		C2A8AA6C2636390D006AAA57 /* Team Details Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8AA6B2636390D006AAA57 /* Team Details Contracts.swift */; };
 		C2A8AA7126363A7A006AAA57 /* TeamDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8AA7026363A7A006AAA57 /* TeamDetailsPresenter.swift */; };
 		C2F768D9263E83840053D920 /* AllsportsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F768D8263E83840053D920 /* AllsportsUITests.swift */; };
+		C2F768E1263EC5F20053D920 /* MockAllLeaguesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F768E0263EC5F20053D920 /* MockAllLeaguesAPI.swift */; };
+		C2F768E3263EC6170053D920 /* AllLeaguesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F768E2263EC6170053D920 /* AllLeaguesTests.swift */; };
+		C2F768E5263EC7900053D920 /* AllLeaguesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F768E4263EC7900053D920 /* AllLeaguesUITests.swift */; };
 		CBF850D571615197D58F46F4 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D2DFE92BB7FFA07200C544 /* Pods_Sportify.framework */; };
 		FEF9E55B64316444D4BA48F1 /* Pods_SportifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864DAA64F6090FEBE33FE970 /* Pods_SportifyTests.framework */; };
 /* End PBXBuildFile section */
@@ -170,6 +173,9 @@
 		C2A8AA6B2636390D006AAA57 /* Team Details Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Team Details Contracts.swift"; sourceTree = "<group>"; };
 		C2A8AA7026363A7A006AAA57 /* TeamDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsPresenter.swift; sourceTree = "<group>"; };
 		C2F768D8263E83840053D920 /* AllsportsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllsportsUITests.swift; sourceTree = "<group>"; };
+		C2F768E0263EC5F20053D920 /* MockAllLeaguesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAllLeaguesAPI.swift; sourceTree = "<group>"; };
+		C2F768E2263EC6170053D920 /* AllLeaguesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLeaguesTests.swift; sourceTree = "<group>"; };
+		C2F768E4263EC7900053D920 /* AllLeaguesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLeaguesUITests.swift; sourceTree = "<group>"; };
 		CEB99E0546993C6FD452CAEE /* Pods_Sportify_SportifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportify_SportifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9D6D3F29ED8AAC498B2D35 /* Pods-Sportify-SportifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify-SportifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9D3D6A303DFA42F45936813 /* Pods-Sportify-SportifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify-SportifyUITests.release.xcconfig"; path = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -461,6 +467,7 @@
 				0DD9C9F6262F42F100C12C58 /* SportifyTests.swift */,
 				0DD9C9F8262F42F100C12C58 /* Info.plist */,
 				C210B888263E6E3200E2D7A4 /* AllSportsTests.swift */,
+				C2F768E2263EC6170053D920 /* AllLeaguesTests.swift */,
 			);
 			path = SportifyTests;
 			sourceTree = "<group>";
@@ -471,6 +478,7 @@
 				0DD9CA01262F42F100C12C58 /* SportifyUITests.swift */,
 				0DD9CA03262F42F100C12C58 /* Info.plist */,
 				C2F768D8263E83840053D920 /* AllsportsUITests.swift */,
+				C2F768E4263EC7900053D920 /* AllLeaguesUITests.swift */,
 			);
 			path = SportifyUITests;
 			sourceTree = "<group>";
@@ -666,6 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				C210B88B263E720300E2D7A4 /* MockAllSportsAPI.swift */,
+				C2F768E0263EC5F20053D920 /* MockAllLeaguesAPI.swift */,
 			);
 			path = Mocks2;
 			sourceTree = "<group>";
@@ -1034,8 +1043,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C210B889263E6E3200E2D7A4 /* AllSportsTests.swift in Sources */,
+				C2F768E1263EC5F20053D920 /* MockAllLeaguesAPI.swift in Sources */,
 				0DD9C9F7262F42F100C12C58 /* SportifyTests.swift in Sources */,
 				C210B88C263E720300E2D7A4 /* MockAllSportsAPI.swift in Sources */,
+				C2F768E3263EC6170053D920 /* AllLeaguesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,6 +1055,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2F768D9263E83840053D920 /* AllsportsUITests.swift in Sources */,
+				C2F768E5263EC7900053D920 /* AllLeaguesUITests.swift in Sources */,
 				0DD9CA02262F42F100C12C58 /* SportifyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
