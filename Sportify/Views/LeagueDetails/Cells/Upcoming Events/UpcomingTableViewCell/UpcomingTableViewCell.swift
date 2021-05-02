@@ -14,8 +14,9 @@ class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollect
     var upcomingEventsArray:[UpcomingEvents] = [UpcomingEvents]()
     var upcomingEventsTeamsArray: [Team] = [Team]()
     
-    var activityIndicator: UIActivityIndicatorView!
+//    var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var errorImageView: UIImageView!
     
     @IBOutlet weak var upcomingCollectionView: UICollectionView!{
@@ -96,10 +97,11 @@ extension UpcomingTableViewCell: UpcomingEventViewProtocol{
     }
     
     func showLoading() {
-        activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.center = self.contentView.center
+//        activityIndicator = UIActivityIndicatorView(style: .large)
+//        activityIndicator.hidesWhenStopped = true
+//        self.activityIndicator.center = self.contentView.center
 //        self.contentView.addSubview(self.activityIndicator)
+        activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         print("collVi start ActInd   upcoming")
     }
