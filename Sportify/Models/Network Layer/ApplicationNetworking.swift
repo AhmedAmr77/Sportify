@@ -12,8 +12,10 @@ import Alamofire
 enum ApplicationNetworking{
     case getAllSports
     case getAllLeagues(sport:String)
-    case getLeagueDetails(id:String)
     case getTeamDetails(id:String)
+    case getTeams(id: String)
+    case getLastEvents(id: String)
+    case getUpcomingEvents(id: String, round: String)
 }
 
 extension ApplicationNetworking : TargetType {
@@ -31,10 +33,14 @@ extension ApplicationNetworking : TargetType {
             return Constants.getAllSports
         case .getAllLeagues:
             return Constants.getAllLeagues
-        case .getLeagueDetails:
-            return Constants.getLeagueDetails
         case .getTeamDetails:
             return Constants.getTeamDetails
+        case .getTeams:
+            return Constants.getTeams
+        case .getLastEvents:
+            return Constants.getLastEvents
+        case .getUpcomingEvents:
+            return Constants.getUpcomingEvent
         }
     }
     
@@ -44,9 +50,13 @@ extension ApplicationNetworking : TargetType {
             return .get
         case .getAllLeagues:
             return .get
-        case .getLeagueDetails:
-            return .get
         case .getTeamDetails:
+            return .get
+        case .getTeams:
+            return .get
+        case .getLastEvents:
+            return .get
+        case .getUpcomingEvents:
             return .get
         }
     }
@@ -57,10 +67,14 @@ extension ApplicationNetworking : TargetType {
             return .requestPlain
         case .getAllLeagues(let sport):
             return .requestParameters(parameters: ["s":sport], encoding: URLEncoding.default)
-        case .getLeagueDetails(let id):
-            return .requestParameters(parameters: ["id":id], encoding: URLEncoding.default)
         case .getTeamDetails(let id):
             return .requestParameters(parameters: ["id":id], encoding: URLEncoding.default)   //for get,head or delete use URLEncoding.default
+        case .getTeams(let id):
+            return .requestParameters(parameters: ["id": id], encoding: URLEncoding.default)
+        case .getLastEvents(let id):
+            return .requestParameters(parameters: ["id": id], encoding: URLEncoding.default)
+        case .getUpcomingEvents(let id, let round):
+            return .requestParameters(parameters: ["id": id, "r": round], encoding: URLEncoding.default)
         }
     }
     

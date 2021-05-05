@@ -27,59 +27,59 @@ class NetworkManager {
     
     // MARK: Ahmd Section
     
-    func getTeams(leagueId id: String, teamsPresenterProtocol: TeamsPresenterProtocol) {
-        let parameters = ["id": id]
-        AF.request(Constants.teamsJsonURL, parameters: parameters)
-            .validate()
-            .responseDecodable(of: TeamsJSON.self) { (response) in
-                switch response.result {
-                case .success(_):
-                    guard let teams = response.value?.teams else {
-                        teamsPresenterProtocol.onFail(errorMessage: "")
-                        return
-                    }
-                    teamsPresenterProtocol.onSuccess(teams: teams)
-                case .failure(let err):
-                    teamsPresenterProtocol.onFail(errorMessage: err.localizedDescription)
-                }
-        }
-    }
+//    func getTeams(leagueId id: String, teamsPresenterProtocol: TeamsPresenterProtocol) {
+//        let parameters = ["id": id]
+//        AF.request(Constants.teamsJsonURL, parameters: parameters)
+//            .validate()
+//            .responseDecodable(of: TeamsJSON.self) { (response) in
+//                switch response.result {
+//                case .success(_):
+//                    guard let teams = response.value?.teams else {
+//                        teamsPresenterProtocol.onFail(errorMessage: "")
+//                        return
+//                    }
+//                    teamsPresenterProtocol.onSuccess(teams: teams)
+//                case .failure(let err):
+//                    teamsPresenterProtocol.onFail(errorMessage: err.localizedDescription)
+//                }
+//        }
+//    }
     
-    func getLastEvents(leagueId id: String, lastEventsPresenterProtocol: LastEventPresenterProtocol) {
-    let parameters = ["id": id]
-    AF.request(Constants.lastEventJsonURL, parameters: parameters)
-            .validate()
-            .responseDecodable(of: LastEventsJSON.self) { (response) in
-                switch response.result {
-                    case .success(_):
-                        guard let events = response.value?.events else {
-                            lastEventsPresenterProtocol.onFail(errorMessage: "")
-                            return
-                        }
-                        lastEventsPresenterProtocol.onSuccess(lastEvents: events)
-                    case .failure(let err):
-                        lastEventsPresenterProtocol.onFail(errorMessage: err.localizedDescription)
-                }
-        }
-    }
+//    func getLastEvents(leagueId id: String, lastEventsPresenterProtocol: LastEventPresenterProtocol) {
+//    let parameters = ["id": id]
+//    AF.request(Constants.lastEventJsonURL, parameters: parameters)
+//            .validate()
+//            .responseDecodable(of: LastEventsJSON.self) { (response) in
+//                switch response.result {
+//                    case .success(_):
+//                        guard let events = response.value?.events else {
+//                            lastEventsPresenterProtocol.onFail(errorMessage: "")
+//                            return
+//                        }
+//                        lastEventsPresenterProtocol.onSuccess(lastEvents: events)
+//                    case .failure(let err):
+//                        lastEventsPresenterProtocol.onFail(errorMessage: err.localizedDescription)
+//                }
+//        }
+//    }
     
-    func getUpcomingEvents(leagueId id: String, round:Int, upcomingEventsPresenterProtocol: UpcomingEventPresenterProtocol) {
-        let parameters = ["id": id, "r": "\(round)"]
-        AF.request(Constants.upcomingEventJsonURL, parameters: parameters)
-            .validate()
-            .responseDecodable(of: UpcomingEventsJSON.self) { (response) in
-                switch response.result {
-                case .success(_):
-                    guard let events = response.value?.events else {
-                        upcomingEventsPresenterProtocol.onFail(errorMessage: "")
-                        return
-                    }
-                    upcomingEventsPresenterProtocol.onSuccess(upcomingEvents: events)
-                case .failure(let err):
-                    upcomingEventsPresenterProtocol.onFail(errorMessage: err.localizedDescription)
-                }
-        }
-    }
+//    func getUpcomingEvents(leagueId id: String, round:Int, upcomingEventsPresenterProtocol: UpcomingEventPresenterProtocol) {
+//        let parameters = ["id": id, "r": "\(round)"]
+//        AF.request(Constants.upcomingEventJsonURL, parameters: parameters)
+//            .validate()
+//            .responseDecodable(of: UpcomingEventsJSON.self) { (response) in
+//                switch response.result {
+//                case .success(_):
+//                    guard let events = response.value?.events else {
+//                        upcomingEventsPresenterProtocol.onFail(errorMessage: "")
+//                        return
+//                    }
+//                    upcomingEventsPresenterProtocol.onSuccess(upcomingEvents: events)
+//                case .failure(let err):
+//                    upcomingEventsPresenterProtocol.onFail(errorMessage: err.localizedDescription)
+//                }
+//        }
+//    }
 }
 
 //extension NetworkManager : IAllSportsManager{

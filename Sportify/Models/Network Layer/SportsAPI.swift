@@ -36,3 +36,27 @@ extension SportsAPI : IAllLeaguesManager{
         }
     }
 }
+
+extension SportsAPI: TeamsManagerProtocol {
+    func getTeams(leagueId: String, completion: @escaping (Result<TeamsJSON?, NSError>) -> Void) {
+        self.fetchData(target: .getTeams(id: leagueId), responseClass: TeamsJSON.self) { (result) in
+            completion(result)
+        }
+    }
+}
+
+extension SportsAPI: LastEventManagerProtocol {
+    func getLastEvents(leagueId: String, completion: @escaping (Result<LastEventsJSON?, NSError>) -> Void) {
+        self.fetchData(target: .getLastEvents(id: leagueId), responseClass: LastEventsJSON.self) { (result) in
+            completion(result)
+        }
+    }
+}
+
+extension SportsAPI: UpcomingEventManagerProtocol {
+    func getUpcomingEvents(leagueId: String, round: String, completion: @escaping (Result<UpcomingEventsJSON?, NSError>) -> Void) {
+        fetchData(target: .getUpcomingEvents(id: leagueId, round: round), responseClass: UpcomingEventsJSON.self) { (result) in
+            completion(result)	
+        }
+    }
+}

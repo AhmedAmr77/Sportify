@@ -22,3 +22,9 @@ protocol LastEventPresenterProtocol {
     func onFail(errorMessage: String)
     
 }
+
+protocol LastEventManagerProtocol {
+    
+    func getLastEvents(leagueId:String,completion: @escaping (Result<LastEventsJSON?,NSError>) -> Void)
+
+}

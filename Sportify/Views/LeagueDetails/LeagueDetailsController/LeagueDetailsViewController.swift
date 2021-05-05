@@ -16,12 +16,12 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     var upcomingEvents = [UpcomingEvents]()
     var lastEvents = [LastEvents]()
     
-    var activityIndicator: UIActivityIndicatorView!
+//    var activityIndicator: UIActivityIndicatorView!
     
     var leagueId: String?
     var leagueCountry: Country?
     
-    var round: Int = 0 {
+    var round: String = "0" {
         didSet {
             getUpcomingEventsList(id:leagueId, round: round)
         }
@@ -54,18 +54,26 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         
         leagueDetailsPresenter = LeagueDetailsPresenter(leagueDetailsViewProtocol: self)
         
-        teamsCell = TeamsTableViewCell()
-        lastEventsCell = LastTableViewCell()
-        upcomingEventsCell = UpcomingTableViewCell()
+        cellsInit()
       
         checkIfFavorite()
         
         getTeamsList(id: leagueId)
         getLastEventsList(id: leagueId)
-//        getUpcomingEventsList(id:leagueId, round: round)
     
     }
     
+    func cellsInit(){
+        let teamsCellIdentifier = "teamsCell"
+        teamsCell = upcomingTableView.dequeueReusableCell(withIdentifier: teamsCellIdentifier) as? TeamsTableViewCell ?? TeamsTableViewCell(style: .default, reuseIdentifier: teamsCellIdentifier)
+        teamsCell?.controllerDelegate = self
+        
+        let lastCellIdentifier = "lastCell"
+        lastEventsCell = upcomingTableView.dequeueReusableCell(withIdentifier: lastCellIdentifier) as? LastTableViewCell ?? LastTableViewCell(style: .default, reuseIdentifier: lastCellIdentifier)
+        
+        let upcomingCellIdentifier = "upcomingCell"
+        upcomingEventsCell = upcomingTableView.dequeueReusableCell(withIdentifier: upcomingCellIdentifier) as? UpcomingTableViewCell ?? UpcomingTableViewCell(style: .default, reuseIdentifier: upcomingCellIdentifier)
+    }
     
     func getTeamsList(id: String?) {
         TeamsPresenter(teamsViewProtocol: self).getTeams(leagueId: id)
@@ -75,13 +83,13 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         LastEventPresenter(lastEventsViewProtocol: self).getEvents(leagueId: id)
     }
     
-    func getUpcomingEventsList(id: String?, round: Int?) {
+    func getUpcomingEventsList(id: String?, round: String?) {
         UpcomingEventPresenter(upcomingEventsViewProtocol: self).getEvents(leagueId: id, round: round)
     }
     
-    func checkIfFavorite() {                                              // make sure that league id will never be nil
-        print("DetLeag - checkIfFavorite - \(leagueId!)")
-        leagueDetailsPresenter.checkIfFavorite(leagueId: leagueId!)  //  ??AAAAMMMMMRRRRR
+    func checkIfFavorite() {
+        print("DetLeag - checkIfFavorite - \(leagueId)")
+        leagueDetailsPresenter.checkIfFavorite(leagueId: leagueId)
     }
     
 
@@ -91,12 +99,12 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             sender.image = UIImage(systemName: "heart.fill")
 //            sender.image?.withTintColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
             sender.tag = 1
-            leagueDetailsPresenter.addToLocal(leagueId: leagueId!, leagueCountry: leagueCountry!)
+            leagueDetailsPresenter.addToLocal(leagueId: leagueId, leagueCountry: leagueCountry)
         } else {
             print("Fav Pressed tag = 1")
             sender.image = UIImage(systemName: "heart")
             sender.tag = 0
-            leagueDetailsPresenter.removeFromLocal(leagueId: leagueId!)
+            leagueDetailsPresenter.removeFromLocal(leagueId: leagueId)
         }
     }
     
@@ -117,7 +125,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             return cell
             
         case 1:
-            upcomingEventsCell = (self.upcomingTableView.dequeueReusableCell(withIdentifier:"upcomingCell" , for: indexPath) as! UpcomingTableViewCell)
+//            upcomingEventsCell = (self.upcomingTableView.dequeueReusableCell(withIdentifier:"upcomingCell" , for: indexPath) as! UpcomingTableViewCell)
             return upcomingEventsCell!
             
         case 2:
@@ -128,7 +136,7 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             return cell
             
         case 3:                                 
-            lastEventsCell = (self.upcomingTableView.dequeueReusableCell(withIdentifier:"lastCell" , for: indexPath) as! LastTableViewCell)
+//            lastEventsCell = (self.upcomingTableView.dequeueReusableCell(withIdentifier:"lastCell" , for: indexPath) as! LastTableViewCell)
             return lastEventsCell!
             
         case 4:
@@ -139,9 +147,17 @@ class LeagueDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             return cell
             
         default:
-            teamsCell = (self.upcomingTableView.dequeueReusableCell(withIdentifier:"teamsCell" , for: indexPath) as! TeamsTableViewCell)
-            teamsCell?.controllerDelegate = self
+//            teamsCell = (self.upcomingTableView.dequeueReusableCell(withIdentifier:"teamsCell" , for: indexPath) as! TeamsTableViewCell)
+//            teamsCell?.controllerDelegate = self
             return teamsCell!
+            
+            /*
+             let cellIdentifier = "teamsCell"
+              let cell = upcomingTableView.dequeueReusableCell(
+                withIdentifier: cellIdentifier
+              ) as? TeamsTableViewCell ?? TeamsTableViewCell(reuseIdentifier: cellIdentifier)
+             teamsCell?.controllerDelegate = self
+             */
        
         }
         
@@ -217,16 +233,22 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
     
     
     func showLoading() {
-        activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.center = self.upcomingTableView.center
-        activityIndicator.startAnimating()
-        print("start ActInd")
+//        activityIndicator = UIActivityIndicatorView(style: .large)
+//        activityIndicator.hidesWhenStopped = true
+//        self.activityIndicator.center = self.upcomingTableView.center
+//        activityIndicator.startAnimating()
+        print("start ActInd  0000000")
+        teamsCell?.showLoading()
+        lastEventsCell?.showLoading()
+        upcomingEventsCell?.showLoading()
     }
     
     func hideLoading() {
-        activityIndicator.stopAnimating()
-        print("stop ActInd")
+//        activityIndicator.stopAnimating()
+        print("stop ActInd   0000000")
+        teamsCell?.hideLoading()
+        lastEventsCell?.hideLoading()
+        upcomingEventsCell?.hideLoading()
     }
     
     func showErrorMessage(errorMessage: String) {
@@ -243,6 +265,7 @@ extension LeagueDetailsViewController: TeamsViewProtocol{
                 upcomingEventsCell?.showErrorMessage(errorMessage: "")
             case 2:
                 lastEventsCell?.showErrorMessage(errorMessage: "")
+                upcomingEventsCell?.showErrorMessage(errorMessage: "")
             case 3:
                 teamsCell?.showErrorMessage(errorMessage: "")
             default:
@@ -257,9 +280,10 @@ extension LeagueDetailsViewController: LastEventViewProtocol{
     
     func renderViewWithLastEvents(events: [LastEvents]) {
         lastEvents = events
-        
+        print("renderViewWithLastEvents Teeeeeeeeeeeest")
         if let roundStr = events[0].intRound{
-            round = Int(roundStr)! + 1
+            let roundInt = Int(roundStr)! + 1
+            round = String(roundInt)
         } else {
             upcomingEventsCell?.showErrorMessage(errorMessage: "errorMessageeeeeeeeeee")  // WRONG PLACE 
         }

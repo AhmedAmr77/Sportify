@@ -19,7 +19,7 @@ protocol FavoriteLeaguePresenterProtocol: IAllLeaguesPresenter {
    
     func getAllLeagues()
     
-    func onItemDelete(row:Int, leagueId id: String)
+    func onItemDelete(row:Int, leagueId id: String?)
     
     func checkConnectivity() -> Bool
     

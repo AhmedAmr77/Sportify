@@ -14,8 +14,9 @@ class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollect
     var upcomingEventsArray:[UpcomingEvents] = [UpcomingEvents]()
     var upcomingEventsTeamsArray: [Team] = [Team]()
     
-    var activityIndicator: UIActivityIndicatorView!
+//    var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var errorImageView: UIImageView!
     
     @IBOutlet weak var upcomingCollectionView: UICollectionView!{
@@ -64,11 +65,11 @@ class UpcomingTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollect
         for item in upcomingEventsTeamsArray {
                         
             if self.upcomingEventsArray[indexPath.row].strHomeTeam == item.strTeam  {
-                cell.team1ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
+                cell.team1ImageView.sd_setImage(with: URL(string: item.strTeamBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
             }
             
             if self.upcomingEventsArray[indexPath.row].strAwayTeam == item.strTeam  {
-                cell.team2ImageView.sd_setImage(with: URL(string: item.strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
+                cell.team2ImageView.sd_setImage(with: URL(string: item.strTeamBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
             }
         }
         
@@ -96,18 +97,23 @@ extension UpcomingTableViewCell: UpcomingEventViewProtocol{
     }
     
     func showLoading() {
-        activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.center = self.upcomingCollectionView.center
+//        activityIndicator = UIActivityIndicatorView(style: .large)
+//        activityIndicator.hidesWhenStopped = true
+//        self.activityIndicator.center = self.contentView.center
+//        self.contentView.addSubview(self.activityIndicator)
+        activityIndicator.isHidden = false
         activityIndicator.startAnimating()
+        print("collVi start ActInd   upcoming")
     }
     
     func hideLoading() {
-        activityIndicator.stopAnimating()
+        activityIndicator?.stopAnimating()
+        print("collVi stop ActInd   upcoming")
     }
     
     func showErrorMessage(errorMessage: String) {
         errorImageView.isHidden = false
+        print("UP showErrorImg Cell")
     }
     
     
