@@ -29,21 +29,21 @@ class BaseAPI<T:TargetType> {
                     guard let jsonResponse = try? response.result.get() else {
                         //add custom Error
                         let error = NSError(domain: target.baseURL, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.genericError])
-//                        print("at jsonResponse"+(error as! String))
+                        print("at jsonResponse")
                         completion(.failure(error))
                         return
                     }
                     guard let theJsonData = try? JSONSerialization.data(withJSONObject: jsonResponse, options: []) else {
                         //add custom Error
                         let error = NSError(domain: target.baseURL, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.genericError])
-                        print("at jsonData"+(error as! String))
+                        print("at jsonData")
                         completion(.failure(error))
                         return
                     }
                     guard let responseObject = try? JSONDecoder().decode(M.self, from: theJsonData) else {
                         //add custom Error
                         let error = NSError(domain: target.baseURL, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.genericError])
-//                        print("at responseObject"+(error as! String))
+                        print("at responseObject, error on parsing")
                         completion(.failure(error))
                         return
                     }
