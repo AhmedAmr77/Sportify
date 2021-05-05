@@ -12,30 +12,46 @@ class LastEventPresenter: LastEventPresenterProtocol {
     
     var lastEventsViewProtocol: LastEventViewProtocol!
     
+    var networkManager: LastEventManagerProtocol?
+    
     init(lastEventsViewProtocol: LastEventViewProtocol) {
         self.lastEventsViewProtocol = lastEventsViewProtocol
+        networkManager = SportsAPI.shared
     }
     
     func getEvents(leagueId id: String?) {
-        if let iD = id {
-            lastEventsViewProtocol.showLoading()
-            NetworkManager().getLastEvents(leagueId: iD, lastEventsPresenterProtocol: self)
-        } else {
-            lastEventsViewProtocol.showErrorMessage(errorMessage: "2")
-        }
+        lastEventsViewProtocol.showLoading()
+        networkManager?.getLastEvents(leagueId: id!, completion: { (result) in
+            switch result {
+            case .success(let response):
+                if let events = response?.events {
+                    self.onSuccess(lastEvents: events)
+                } else {
+                    self.onFail(errorMessage: "")
+                }
+            case .failure(let error):
+                self.onFail(errorMessage: error.localizedDescription)
+            }
+        })
+//        if let iD = id {
+//            lastEventsViewProtocol.showLoading()
+//            NetworkManager().getLastEvents(leagueId: iD, lastEventsPresenterProtocol: self)
+//        } else {
+//            lastEventsViewProtocol.showErrorMessage(errorMessage: "2")
+//        }
     }
     
     
     //    Back
     
     func onSuccess(lastEvents: [LastEvents]) {
-        print("onSecc LA Presenter \(lastEvents[0].strHomeTeam) \(lastEvents[0].strStatus) \(lastEvents[1].intRound)")
+//        print("onSecc LA Presenter \(lastEvents[0].strHomeTeam) \(lastEvents[0].strStatus) \(lastEvents[1].intRound)")
         lastEventsViewProtocol.hideLoading()
         lastEventsViewProtocol.renderViewWithLastEvents(events: lastEvents)
     }
     
     func onFail(errorMessage: String) {
-        print("onFail LA Presenter")
+//        print("onFail LA Presenter")
         lastEventsViewProtocol.hideLoading()
         lastEventsViewProtocol.showErrorMessage(errorMessage: "2\(errorMessage)")
     }

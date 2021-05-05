@@ -16,9 +16,15 @@ protocol UpcomingEventViewProtocol: BaseViewProtocol {
 
 protocol UpcomingEventPresenterProtocol {
     
-    func getEvents(leagueId id: String?, round: Int?)
+    func getEvents(leagueId id: String?, round: String?)
     
     func onSuccess(upcomingEvents: [UpcomingEvents])
     func onFail(errorMessage: String)
     
+}
+
+protocol UpcomingEventManagerProtocol {
+    
+    func getUpcomingEvents(leagueId:String, round: String, completion: @escaping (Result<UpcomingEventsJSON?,NSError>) -> Void)
+
 }

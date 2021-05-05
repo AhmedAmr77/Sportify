@@ -14,11 +14,11 @@ class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollection
     
     var teamsArray: [Team] = [Team]()
     
-    var activityIndicator: UIActivityIndicatorView!
+//    var activityIndicator: UIActivityIndicatorView!
     
     var controllerDelegate: TeamsViewProtocol?
-    
-    
+        
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var errorImageView: UIImageView!
     
     @IBOutlet weak var teamsCollectionView: UICollectionView!{
@@ -57,7 +57,7 @@ class TeamsTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.teamsCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TeamsCollectionViewCell
-        cell.teamImageView.sd_setImage(with: URL(string: teamsArray[indexPath.row].strTeamBadge!), placeholderImage: UIImage(named: "placeholder"))
+        cell.teamImageView.sd_setImage(with: URL(string: teamsArray[indexPath.row].strTeamBadge ?? ""), placeholderImage: UIImage(named: "placeholder"))
         cell.teamName.text = teamsArray[indexPath.row].strTeam
         
         cell.layer.cornerRadius = cell.frame.width / 4
@@ -84,16 +84,18 @@ extension TeamsTableViewCell: TeamsViewProtocol{
     }
     
     func showLoading() {
-        activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.center = self.teamsCollectionView.center
+//        activityIndicator = UIActivityIndicatorView(style: .large)
+//        activityIndicator.hidesWhenStopped = true
+//        self.activityIndicator.center = self.contentView.center
+//        self.contentView.addSubview(activityIndicator)
+        activityIndicator.isHidden = false
         activityIndicator.startAnimating()
-        print("collVi start ActInd")
+        print("collVi start ActInd   Teams")
     }
     
     func hideLoading() {
         activityIndicator.stopAnimating()
-        print("collVi stop ActInd")
+        print("collVi stop ActInd   Teams")
     }
     
     func showErrorMessage(errorMessage: String) {

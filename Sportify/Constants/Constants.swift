@@ -41,6 +41,10 @@ struct Constants {
     
     // MARK: Ahmd Section
     
+    static let getTeams = "lookup_all_teams.php"
+    static let getLastEvents = "eventspastleague.php"
+    static let getUpcomingEvent = "eventsround.php"
+    
     static let teamsJsonURL = "https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id="
     static let lastEventJsonURL = "https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id="
     static let upcomingEventJsonURL = "https://www.thesportsdb.com/api/v1/json/1/eventsround.php?id=&r="

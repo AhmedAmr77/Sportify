@@ -25,3 +25,8 @@ protocol TeamsPresenterProtocol {
     
 }
 
+protocol TeamsManagerProtocol {
+    
+    func getTeams(leagueId:String,completion: @escaping (Result<TeamsJSON?,NSError>) -> Void)
+
+}
