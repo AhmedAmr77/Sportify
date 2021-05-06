@@ -42,7 +42,9 @@ class FavoriteLeaguesPresenter: FavoriteLeaguePresenterProtocol{
     }
     
     func onYoutubeClick(row: Int) {
+        if checkConnectivity() {
         delegate?.performActionWhenYoutubeClick(row: row)
+        }
     }
     
     func onItemDelete(row: Int, leagueId id: String?) {
