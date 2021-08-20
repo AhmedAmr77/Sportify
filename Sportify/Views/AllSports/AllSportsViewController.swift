@@ -52,7 +52,7 @@ extension AllSportsViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.allSportsCellIdentifier, for: indexPath) as! AllSportsCollectionViewCell
         
         cell.sportNameLabel.text = sportsArray[indexPath.row].strSport
-        cell.sportsImage.sd_setImage(with: URL(string: sportsArray[indexPath.row].strSportThumb), placeholderImage: UIImage(named: "placeholder"))
+        cell.sportsImage.sd_setImage(with: URL(string: sportsArray[indexPath.row].strSportThumb ?? ""), placeholderImage: UIImage(named: "placeholder"))
         return cell
     }
     
